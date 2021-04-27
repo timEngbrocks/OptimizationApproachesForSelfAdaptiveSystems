@@ -1,9 +1,13 @@
-# TimEngbrocks
+# Proseminar Software-Anforderungen und -Entwurf SoSe'21 - Thema-Nr. 7: Optimierungsansätze für Adaptionsstrategien in SAS (Tim Engbrocks)
 
-Proseminar Software-Anforderungen und -Entwurf SoSe2021
-Thema 7: Optimierungsansätze für Adaptionsstrategien in SAS
+* Selbst-adaptive Softwaresysteme (SAS) passen sich zur Laufzeit automatisch an ihre veränderten Umweltbedingungen an
+Die Anpassung erfolgt über Auswertung von Laufzeitdaten auf Basis vordefinierter Regeln in Form von geeigneten Systemrekonfigurationen (=Adaptionsstrategie)
+* Optimierungsansätze versuchen eine optimale Systemkonfiguration unter Berücksichtigung der veränderten Umweltbedingungen zu identifizieren, die den geforderten Qualitätszielen des Systems (QoS) genügt
+* Welche Optimierungsansätze für Adaptionsstrategien in SAS existieren ?
 
-Aufgabenbeschreibung
+**Aufgabe**
+* Erstellung eines Überblicks über existierende Optimierungsansätze für Adaptionsstrategien in SAS
+* Klassifizierung der Optimierungsverfahren hinsichtlich ihrer Anwendbarkeit (runtime und design-time)
 
 ## Proseminar-Portal (Kompakter Überblick)
 * [Portal:Studentische Arbeiten/Proseminar](https://sdqweb.ipd.kit.edu/wiki/Portal:Studentische_Arbeiten/Proseminar)
