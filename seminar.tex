@@ -55,6 +55,9 @@
 \usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
 \addbibresource{seminar.bib}
 
+%% TODO: Is the acronym package ok?
+\usepackage[acronym]{glossaries}
+
 %% ====================================
 %% ====================================
 %% ||                                ||
@@ -83,6 +86,12 @@
 \input{sections/proposal.tex}
 \input{sections/existing.tex}
 \input{sections/conclusion.tex}
+
+%% ----------------
+%% |   Acronyms   |
+%% ----------------
+\newacronym{sas}{SAS}{Self-Adaptive Software}
+\newacronym{oa}{OA}{Optimization Approach}
 
 %% --------------------
 %% |   Bibliography   |
