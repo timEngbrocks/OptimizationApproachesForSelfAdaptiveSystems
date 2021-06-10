@@ -2,6 +2,10 @@
 \section{Classification of Self-Adaptive Systems}
 \label{ch:SASClassification}
 
+% TODO: maybe provide a fictional example to explain SAS
+% - useful for understandability
+%   - Which parts can not be optimized: why the environment generally can not be controlled.
+
 % TODO:
 % - Shortly cover how SAS are classified:
 %     - Krupitzer et al
@@ -106,8 +110,47 @@ The three main factors of the Adaptation Control are the degree of decentralizat
 and the approach taken by the system, which divides Self-Adaptive Systems into those where the adaptation logic is part of the application logic
 and those with separated adaptation and application logic.
 
-% TODO: Which parts can be optimized
-
 % TODO: Which parts cant be optimized/are a design descision
+% - the environment / reason for a change
+% - time: mostly a design decision
+% - level: 
+% - who: in THE taxonomy not included
+
+After classifying Self-Adaptive Systems.
+The following question can be asked: Which parts of a Self-Adaptive System can be optimized?
+To answer this we will start by looking at which parts can not be optimized. % TODO: seems harsh: or seem like design
+
+The first part that can not be optimized is the environment which provides the Reason dimension.
+While the environment for a Self-Adaptive System can be choosen in a way which is most beneficial for the system
+and can be influenced by actors, % TODO: stand in einem Paper, wahrscheinlich FORMS
+the behaviour of the systems environment can generally not be controlled completly.
+
+Another dimension of Self-Adaptive Systems that can not be optimized, or is not useful to optimize,
+is the Time dimension. This dimension is mostly design decision on how the system should behave and be constructed.
+It is also a question of how to handle uncertainty and the level of accepted risk.
+A proactive system can prevent faults and degredation in Quality-of-Service metrics 
+but it can also predict the wrong changes, which can lead to a situation where the system itself generates faults by
+reacting in a way that is different or opposite to the currently needed change. % TODO: besser formulieren
+A reactive system can not prevent faults like a proactive system
+but its behavior can be much more stable because it only has to react to a change and not also predict that change.
+
+% TODO: ???
+The Level dimension is mostly a design decision?
+
+Lastly the question of who is responsible can not be optimized because it is trivially answered b
+
+% TODO: Which parts can be optimized
+% - Adaptation control
+% - Technique
+
+The two remaining dimensions can be optimized. These are the Adaptation Control and the Technique.
+
+The Approach and the Degree of Decentralization used by the Adaptation Control can not be optimized 
+because they are design decisions of how the system is built.
+But the Adaptation Decision Criteria can be optimized. An optimization of the Adaptation Decision Criteria
+could for example be to dynamically adapt the rules and policies at runtime to better reflect a changing environment.
+
+Another dimension that can be optimized is the Technique. 
+This can be optimized by changing what gets adapted by the system.
 
 % TODO: Current landscape
