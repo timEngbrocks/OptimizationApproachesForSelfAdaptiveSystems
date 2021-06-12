@@ -44,16 +44,27 @@ which all focus on different usages, the three approaches that will be highlight
 % - reflection
 \par
 In their 2012 paper FORMS \cite{FORMS} Weyns et al. propose a formal reference model for describing Self-Adaptive Systems.
+The goal of FORMS is to provide a well defined basis for talking and reasoning about Self-Adaptive Systems.
+This is achieved by providing a definition of FORMS, which classifies Self-Adaptive Systems, using Z notation.
+\par
 By composing a Self-Adaptive System from different levels of components called subsystems,
 where each level can adapt the level beneath, FORMS models the self-adaptive process using reflection.
 The bottom level is populated by base-level computations, base-level subsystems and domain models.
 On top of these base-level components are reflective computations, reflective subsystems and reflection models.
 
-The goal of FORMS is to provide a well defined basis for talking and reasoning about Self-Adaptive Systems.
-This is achieved by providing a definition of FORMS, which classifies Self-Adaptive Systems, using Z notation.
-
 %% self-* properties
-% - read the paper
+\begin{figure*}[hbt!]
+    \includegraphics[width=\textwidth]{images/SelfProperties.png}
+    \caption{self-* properties by Berns and Ghosh, 2009 \cite*{DissectingSelfProperties}}
+    \label{fig:SelfProperties}
+\end{figure*}
+
+While some of the first ideas for Self-Adaptive Systems focused on self-adaptation, 
+like "The Vision of Autonomic Computing" by Kephart and Chess \cite*{VisionOfAutonomicComputing},
+there are other aspects of software systems that can benefit from the ideas of Self-Adaptive Systems.
+These aspects are called self-* properties.
+Berns and Ghosh, 2009 \cite*{DissectingSelfProperties} identified and described the self-properties in Figure \ref{fig:SelfProperties}.
+These self-* properties can be useful to quickly communicate the abilities and goals of a Self-Adaptive System.
 
 %% Krupitzer
 \begin{figure*}[hbt!]
@@ -67,6 +78,7 @@ The taxonomy for Self-Adaptive Systems by Krupitzer's et al., 2015 \cite*{Survey
 is based upon the 5W+1H questions by Salehie and Tahvildari, 2009 \cite*{LandscapeAndResearchChallenges}.
 These questions are: Where, When, What, Why, Who and How.
 Each of these questions is responsible for a different aspect of Self-Adaptive Systems and corresponds to a dimension of the taxonomy. \\
+
 
 % Why
 First there needs to be a reason for a Self-Adaptive System to adapt.

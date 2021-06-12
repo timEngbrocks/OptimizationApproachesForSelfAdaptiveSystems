@@ -27,16 +27,20 @@
 
 % TODO: What are Self-Adaptive Systems?}
 % TODO: Why are Self-Adaptive Systems useful?}
+\par
 The complexity of modern software systems is constantly growing.
 Most of this growth in complexity stems from the 
 "need to integrate several heterogeneous environments into corporate-wide computing systems, 
 and to extend that beyond company boundaries into the Internet" (Kephart and Chess, 2003 \cite*{VisionOfAutonomicComputing}).
-\par
+\newline
 This has reached a state where the 
 "complexity appears to be approaching the limits of human capability" (Kephart and Chess, 2003 \cite*{VisionOfAutonomicComputing}).
 In combination with the uncertainty about a software systems future operations and environment,
 that the developers of such complex systems face, it becomes uneconomical to purely operate a system by human operators.
+\newline
 \par
+
+
 From this the need for software systems which can autonomously manage themselves arises.
 In order to achieve this task of autonomous self-management, the system has to be able to:
 % MAPE-K -> Monitor, Analyze, Plan, Execute with Knowledge
@@ -47,21 +51,33 @@ In order to achieve this task of autonomous self-management, the system has to b
 \end{itemize}
 To model these abilities Kephart and Chess developed 
 the MAPE-K (Monitor-Analyze-Plan-Execute with Knowledge) feedback loop \cite*{VisionOfAutonomicComputing}.
+\newline
 First the system has to monitor itself and its environment. 
 The data, gathered by the monitoring step, has to be analyzed to detect changes and faults.
 If the analyzing step detects, that an adaptation is necessary, 
 the planning step plans which changes have to be made.
 After the changes have been planned, they need to be executed.
 All of this happens with Knowledge of the environment and the system.
-
+\newline
 Software systems that can autonomously manage themselves are called Self-Adaptive Systems
 because of their ability to adapt themselves.
+\newline
+\par
 
-This approach to managing big software systems has many advantages.
-% TODO: list advantages.
 
+This approach to managing software systems has advantages compared to the use of human operators:
+\begin{itemize}% TODO: list advantages.
+    \item 
+\end{itemize}
 
-% TODO: What are the limits of classical Self-Adaptive Systems?}
+% TODO: What are the limits of Self-Adaptive Systems?}
 % TODO: The need for optimizing Self-Adaptive Systems}
-While classical Self-Adaptive Systems can operate more complex systems than human operators,
-they also have disadvantages compared to human operators.
+While Self-Adaptive Systems are better at handling more complex systems,
+human operators are better at handling uncertainty.
+\newline
+This is because the rules and policies, used by Self-Adaptive Systems,
+are created at design time.
+The consequence of this is, that Self-Adaptive Systems can adapt themselves under a changing environment,
+but they can not adapt the rules and policies that are used for adaptation.
+In combination with the fact that not all environment changes can be predicted during design time,
+
