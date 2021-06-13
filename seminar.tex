@@ -55,9 +55,6 @@
 \usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
 \addbibresource{seminar.bib}
 
-%% TODO: Is the acronym package ok?
-\usepackage[acronym]{glossaries}
-
 %% ====================================
 %% ====================================
 %% ||                                ||
@@ -80,13 +77,30 @@
 %% The text is included from the following files:
 %% - sections/abstract
 
-% NOTE: Geplante Seitenaufteilung - mind. 15 Inhaltsseiten
-% Chapter           Planned Current
-% Introduction:     2       1
-% Classification:   5       2.5
-% Proposal:         5       2.5
-% Existing:         2       0.5
-% Conclusion:       1       0
+% NOTE: Planned pages -> minimum of 15 content pages
+% Chapter           Planned Current Missing
+% Introduction:     2       2       0
+% Classification:   5       4       1
+% Proposal:         5       4.5     0.5
+% Existing:         2       0.5     1.5
+% Conclusion:       1       0       1
+% Total:            15      8.5     4
+
+% CURRENT TODO:
+% - Abstract fehlt noch
+% - Was trägt self-* zum Proposal bei?
+% 	- Evtl Paper nochmal lesen
+% - klarer machen das der 5w+1h teil in classification nicht von mir stammt
+% 	- manche punkte könnten ausführlicher sein
+% - classification: ausführlicher wie diese drei dimensions optimized werden können
+% - proposal: übergang mape mapping zu dimensions erklärung
+% 	- klarstellung dass es ein proposal ist
+% - Erklärung dimensions: Text bei Approach
+% - Maybe short summary sentence am ende von proposal vor den tables
+	
+% . ML usage paper: Bezug auf die dort proposed classification?
+
+- Introduction ist gut
 
 \input{sections/abstract.tex}
 \input{sections/introduction.tex}
@@ -94,12 +108,6 @@
 \input{sections/proposal.tex}
 \input{sections/existing.tex}
 \input{sections/conclusion.tex}
-
-%% ----------------
-%% |   Acronyms   |
-%% ----------------
-\newacronym{sas}{SAS}{Self-Adaptive Software}
-\newacronym{oa}{OA}{Optimization Approach}
 
 %% --------------------
 %% |   Bibliography   |

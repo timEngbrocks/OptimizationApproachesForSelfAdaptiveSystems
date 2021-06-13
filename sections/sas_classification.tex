@@ -4,16 +4,7 @@
 
 % TODO: maybe provide a fictional example to explain SAS
 % - useful for understandability
-%   - Which parts can not be optimized: why the environment generally can not be controlled.
-
-% TODO:
-% - Shortly cover how SAS are classified:
-%     - Krupitzer et al
-%     - "Towards a taxonomy ..."
-% - Which parts can be optimized?
-% - Which parts cant be optimized/are a design decision?
-% - Current landscape of OA
-%     - mostly ML
+%   - Example: Which parts can not be optimized: why the environment generally can not be controlled.
 
 % \begin{itemize}
 %     \item How Self-Adaptive Systems are classified.
@@ -22,70 +13,83 @@
 % \end{itemize}
 
 % \paragraph*{Literature for this section:} \begin{itemize}
-%     \item "A survey on engineering approaches for self-adaptive systems" \cite{SurveyOnEngineeringApproaches}
-%     \item "Towards a Taxonomy for the Evaluation of Self-* Software" \cite{TaxonomyOfSelfSoftware}
-%     \item "Dissecting Self-* Properties" \cite{DissectingSelfProperties}
-%     \item "Self-Adaptive Software: Landscape and Research Challenges" \cite{LandscapeAndResearchChallenges}
 %     \item "The Application of Machine Learning in Self-Adaptive Systems: A Systematic Literature Review" \cite{ApplicationOfMachineLearning}
 %     \item "Comparison of Approaches for Self-Improvement in Self-Adaptive Systems" \cite{ComparisonOfSelfImprovement}
 % \end{itemize}
 
-% TODO: How are SAS classified
 There are different approaches on how to classify and describe Self-Adaptive Systems,
 which all focus on different usages, the three approaches that will be highlighted by this paper are:
-% TODO: Add usages
 \begin{itemize}
     \item FORMS from Weyns et al., 2012 \cite*{FORMS}
-    \item Raibulet's, 2018 taxonomy for self-* properties \cite*{TaxonomyOfSelfSoftware}
+    \item Berns and Ghosh, 2009 definition of self-* properties \cite*{DissectingSelfProperties}
     \item Krupitzer's et al., 2015 taxonomy for Self-Adaptive Systems \cite*{SurveyOnEngineeringApproaches}
 \end{itemize} 
+All of these approaches contain ideas that will be used to construct the classification for
+Optimization Approaches for Self-Adaptive Systems in the next chapter.
+\newline
+\par
 
 %% FORMS
 % - reflection
-\par
+\begin{figure*}[b!]
+    \centering
+    \includegraphics[width=\textwidth]{images/FORMS.png}
+    \caption{FORMS primitives by Weyns et al., 2012 \cite*{FORMS}}
+    \label{fig:FORMS}
+\end{figure*}
 In their 2012 paper FORMS \cite{FORMS} Weyns et al. propose a formal reference model for describing Self-Adaptive Systems.
 The goal of FORMS is to provide a well defined basis for talking and reasoning about Self-Adaptive Systems.
 This is achieved by providing a definition of FORMS, which classifies Self-Adaptive Systems, using Z notation.
-\par
 By composing a Self-Adaptive System from different levels of components called subsystems,
 where each level can adapt the level beneath, FORMS models the self-adaptive process using reflection.
-The bottom level is populated by base-level computations, base-level subsystems and domain models.
-On top of these base-level components are reflective computations, reflective subsystems and reflection models.
+The bottom level is populated by base components and domain models.
+On top of these base components are reflective components and reflection models.
+The relation between these component or primitives is depicted in Figure \ref{fig:FORMS}.
+\newline
+\par
+
+
+The concept of different layers of reflection will be useful later to distinguish
+Optimization Approaches for Self-Adaptive Systems from Self-Adaptive Systems.
 
 %% self-* properties
-\begin{figure*}[hbt!]
+\newpage
+\begin{figure*}[t!]
     \includegraphics[width=\textwidth]{images/SelfProperties.png}
     \caption{self-* properties by Berns and Ghosh, 2009 \cite*{DissectingSelfProperties}}
     \label{fig:SelfProperties}
 \end{figure*}
+
 
 While some of the first ideas for Self-Adaptive Systems focused on self-adaptation, 
 like "The Vision of Autonomic Computing" by Kephart and Chess \cite*{VisionOfAutonomicComputing},
 there are other aspects of software systems that can benefit from the ideas of Self-Adaptive Systems.
 These aspects are called self-* properties.
 Berns and Ghosh, 2009 \cite*{DissectingSelfProperties} identified and described the self-properties in Figure \ref{fig:SelfProperties}.
-These self-* properties can be useful to quickly communicate the abilities and goals of a Self-Adaptive System.
+These self-* properties can be useful to either
+quickly communicate the abilities and goals of a Self-Adaptive System
+or to establish well-defined goals for the system.
 
-%% Krupitzer
-\begin{figure*}[hbt!]
+% TODO: What is useful about this
+% TODO: How is this used by the proposal
+
+\newpage
+\begin{figure*}[t!]
     \includegraphics[width=\textwidth]{images/KrupitzerTaxonomy.jpg}
-    \caption{Taxonomy for \acrlong{sas} by Krupitzer et al., 2015 \cite*{SurveyOnEngineeringApproaches}}
+    \caption{Taxonomy for Self-Adaptive Systems by Krupitzer et al., 2015 \cite*{SurveyOnEngineeringApproaches}}
     \label{fig:KrupitzerTaxonomy}
 \end{figure*}
 
-\par
 The taxonomy for Self-Adaptive Systems by Krupitzer's et al., 2015 \cite*{SurveyOnEngineeringApproaches} in Figure \ref{fig:KrupitzerTaxonomy}
 is based upon the 5W+1H questions by Salehie and Tahvildari, 2009 \cite*{LandscapeAndResearchChallenges}.
 These questions are: Where, When, What, Why, Who and How.
-Each of these questions is responsible for a different aspect of Self-Adaptive Systems and corresponds to a dimension of the taxonomy. \\
+Each of these questions is responsible for a different aspect of Self-Adaptive Systems and corresponds to a dimension of the taxonomy.
 
+\subparagraph*{Why}
+First there needs to be a reason for a Self-Adaptive System to adapt. Why an adaptation should be performed is answered by the Reason dimension.
+According to the taxonomy reasons for an adaptation can be changes in either the context, a technical resource or changes caused by the user.
 
-% Why
-First there needs to be a reason for a Self-Adaptive System to adapt.
-Why an adaptation should be performed is answered by the Reason dimension.
-According to the taxonomy reasons for an adaptation can be changes in either the context, a technical resource or changes caused by the user. \\
-
-% Where
+\subparagraph*{Where}
 The question of where asks on which level of the system changes need to occur.
 The different levels on which changes can occur include:
 \begin{itemize}
@@ -95,74 +99,87 @@ The different levels on which changes can occur include:
     \item The context in which the system operates.
 \end{itemize}
 
-% When
+\subparagraph*{When}
 While the original When-Question by Salehie and Tahvildari tries to understand all temporal aspects of Self-Adaptive Systems,
 including how frequently changes should occur and if they happen continously,
 the taxonomy only answers the question when changes should be performed.
-For this purpose the Time dimension differentiates between systems that perform changes proactively or reactively. \\
+For this purpose the Time dimension differentiates between systems that perform changes proactively or reactively.
 
-% What
+\subparagraph*{What}
 In addition to the question of where and when changes should occur, it is also important to know
 what changes should occur. There are different techniques, that can be used.
-The Technique dimension of the taxonomy differentiates between systems that change parameters, their structure or their context. \\
+The Technique dimension of the taxonomy differentiates between systems that change parameters, their structure or their context.
 
-% Who
+\subparagraph*{Who}
 After answering where, when, what and why changes should be performed, 
 it is necessary to select who is responsible for these changes.
 According to Salehie and Tahvildari it is also important to establish if the changes can be performed fully autonomous
 or if the involvement of human operators is necessary.
 The taxonomy does not directly address all of these concerns but states that:
-"N/A (nature of a SAS leads to an automatic type of adaptation)" (Krupitzer et al., 2015 \cite{SurveyOnEngineeringApproaches}). \\
+"N/A (nature of a SAS leads to an automatic type of adaptation)" (Krupitzer et al., 2015 \cite{SurveyOnEngineeringApproaches}).
 
-% How
+\subparagraph*{How}
 Lastly, after determining the where, when, what, why and by who, there needs to be a way
 to perform the required changes. This is answered by asking how the changes should be performed
 and corresponds to the Adaptation Control.
 The three main factors of the Adaptation Control are the degree of decentralization, the adaptation decision criteria
 and the approach taken by the system, which divides Self-Adaptive Systems into those where the adaptation logic is part of the application logic
 and those with separated adaptation and application logic.
+\newline
+\par
 
-% TODO: Which parts cant be optimized/are a design descision
-% - the environment / reason for a change
-% - time: mostly a design decision
-% - level: 
-% - who: in THE taxonomy not included
 
-After classifying Self-Adaptive Systems.
-The following question can be asked: Which parts of a Self-Adaptive System can be optimized?
-To answer this we will start by looking at which parts can not be optimized. % TODO: seems harsh: or seem like design
+After classifying Self-Adaptive Systems the following question can be asked: Which parts of a Self-Adaptive System can be optimized?
+To answer this we will start by looking at which parts can not be optimized or do not benefit from optimization.
+\newline
+\par
 
 The first part that can not be optimized is the environment which provides the Reason dimension.
-While the environment for a Self-Adaptive System can be choosen in a way which is most beneficial for the system
-and can be influenced by actors, % TODO: stand in einem Paper, wahrscheinlich FORMS
-the behaviour of the systems environment can generally not be controlled completly.
+While the environment for a Self-Adaptive System can be chosen in a way which is most beneficial for the system
+and can be influenced by actors,
+the behavior of the systems environment can generally not be controlled completely.
+\newline
+\par
 
 Another dimension of Self-Adaptive Systems that can not be optimized, or is not useful to optimize,
-is the Time dimension. This dimension is mostly design decision on how the system should behave and be constructed.
+is the Time dimension. This dimension is mostly a design decision on how the system should behave and be constructed.
 It is also a question of how to handle uncertainty and the level of accepted risk.
-A proactive system can prevent faults and degredation in Quality-of-Service metrics 
+A proactive system can prevent faults and degradation in Quality-of-Service metrics 
 but it can also predict the wrong changes, which can lead to a situation where the system itself generates faults by
-reacting in a way that is different or opposite to the currently needed change. % TODO: besser formulieren
+reacting in a way that is contradictive to its goals.
 A reactive system can not prevent faults like a proactive system
 but its behavior can be much more stable because it only has to react to a change and not also predict that change.
+\newline
+\par
 
-% TODO: ???
-The Level dimension is mostly a design decision?
-
-Lastly the question of who is responsible can not be optimized because it is trivially answered b
+Lastly the question of who is responsible can not be optimized because the taxonomy simply answers it,
+by referring to the name "Self-Adaptive System" which implies that the system itself is responsible for managing adaptations.
+\newline
+\par
 
 % TODO: Which parts can be optimized
 % - Adaptation control
 % - Technique
-
-The two remaining dimensions can be optimized. These are the Adaptation Control and the Technique.
+% - Level
+The three remaining dimensions can be optimized or can benefit from being adapted dynamically.
+These are the Adaptation Control, the Level and the Technique.
+\newline
+\par
 
 The Approach and the Degree of Decentralization used by the Adaptation Control can not be optimized 
 because they are design decisions of how the system is built.
 But the Adaptation Decision Criteria can be optimized. An optimization of the Adaptation Decision Criteria
 could for example be to dynamically adapt the rules and policies at runtime to better reflect a changing environment.
+\newline
+\par
 
 Another dimension that can be optimized is the Technique. 
 This can be optimized by changing what gets adapted by the system.
+\newline
+\par
 
-% TODO: Current landscape
+The last dimension that can be optimized is the level, which can be optimized by dynamically changing at which level of the system
+adaptations should be performed.
+
+% TODO: Current landscape of Optimization Approaches???
+% Do I really want to put this here?
