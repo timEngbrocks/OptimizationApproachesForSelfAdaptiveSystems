@@ -1,5 +1,5 @@
 \newpage
-\section{Classifying existing optimization approaches}
+\section{Classifying Existing Optimization Approaches}
 \label{ch:Existing}
 
 % TODO:
@@ -21,12 +21,8 @@
 % \end{itemize}
 
 % \paragraph*{Literature for this section:} \begin{itemize}
-%     \item "FUSION: a framework for engineering self-tuning self-adaptive software systems" \cite{FUSION}
-%     \item "FIoT: An agent-based framework for self-adaptive and self-organizing applications based on the Internet of Things" \cite{FIoT}
 %     \item "A multi-agent systems approach to autonomic computing" \cite{MultiAgentSystem}
-%     \item "Learning revised models for planning in adaptive systems" \cite{LearningRevisedModels}
 %     \item "Using a multi-agent system and artificial intelligence for monitoring and improving the cloud performance and security" \cite{ImprovingCloudPerformanceAndSecurity}
-%     \item FESAS by Krupitzer? TODO: research
 % \end{itemize}
 
 \subparagraph*{FUSION}
@@ -37,24 +33,43 @@ The learning cycle is the optimization approach used by FUSION,
 it changes the behavior of the adaptation cycle.
 Both of these cycles continuously run in parallel to each other.
 \begin{itemize}
-    \item Location: Adaptation Control + Technique ?
+    \item Location: FUSION optimizes the Adaptation Control.
     \item Time: FUSION uses both the design and run time to perform optimizations.
     The design time is used to generate an initial model for the learning cycle.
     During the run time the learning cycle monitors adaptations
     and updates the Knowledge Base to improve future adaptations.
-    \item Technique:
-    \item Purpose: The goal of FUSION is to 
+    \item Technique: FUSION updates the rules used by the Self-Adaptive System and the shared knowledge base.
+    \item Purpose: FUSION aims to decrease the difference between the expected and actual outcome of adaptation rules.
     \item Approach: FUSION acts as an external actor.
-    \item Reflective Adaptation Control: 
+    \item Reflective Adaptation Control: FUSION applies optimizations by updating models and modifying rules.
 \end{itemize}
 
 \subparagraph*{Learning Revised Models for Planning in Adaptive Systems}
-by Sykes et al., 2013 \cite*{LearningRevisedModels}
+by Sykes et al., 2013 \cite*{LearningRevisedModels} uses
+"a non-monotonic
+probabilistic rule learning technique, NoMPRoL, that finds
+hypotheses consisting of new rules specifying the probability
+of an action achieving its specified outcome under particular
+conditions" (Sykes et al., 2013 \cite*{LearningRevisedModels})
 \begin{itemize}
-    \item Location: 
-    \item Time: run time
-    \item Technique:
-    \item Purpose: improve domain model + generate new rules
-    \item Approach: internal component that sits between the domain model and the SAS
+    \item Location: The optimizations focus on the Adaptation Control.
+    \item Time: The run time is used to perform optimizations.
+    \item Technique: This approach optimizes the adaptation rules and domain models.
+    \item Purpose: The optimizations aim to generate new and better adaptation rules and domain models.
+    \item Approach: The optimizations are performed by an internal component that sits between the domain model
+    and the Self-Adaptive System.
+    \item Reflective Adaptation Control: This approach generates new adaptation rules.
+\end{itemize}
+
+\newpage
+\subparagraph*{FIoT}
+by Moraes do Nascimento and Pereira, 2016 \cite*{FIoT} is a framework for using agent-based systems
+to construct self-organizing systems for the Internet of Things.
+\begin{itemize}
+    \item Location: FIoT optimizes three different levels: The physical, communication and application layer.
+    \item Time: FIoT performs its optimizations during the run time of the system.
+    \item Technique: FIoT changes the Level, Adaptation Technique and Rules / Policies of a Self-Adaptive System.
+    \item Purpose: Generate self-organizing behavior in a Self-Adaptive System.
+    \item Approach: FIoT uses a decentralized agent-based approach.
     \item Reflective Adaptation Control: 
 \end{itemize}

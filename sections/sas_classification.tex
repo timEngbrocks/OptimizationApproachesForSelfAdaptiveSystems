@@ -2,29 +2,14 @@
 \section{Classification of Self-Adaptive Systems}
 \label{ch:SASClassification}
 
-% TODO: maybe provide a fictional example to explain SAS
-% - useful for understandability
-%   - Example: Which parts can not be optimized: why the environment generally can not be controlled.
-
-% \begin{itemize}
-%     \item How Self-Adaptive Systems are classified.
-%     \item Which parts of Self-Adaptive Systems can be optimized or are important for optimization.
-%     \item An overview of current optimization approaches for Self-Adaptive Systems.
-% \end{itemize}
-
-% \paragraph*{Literature for this section:} \begin{itemize}
-%     \item "The Application of Machine Learning in Self-Adaptive Systems: A Systematic Literature Review" \cite{ApplicationOfMachineLearning}
-%     \item "Comparison of Approaches for Self-Improvement in Self-Adaptive Systems" \cite{ComparisonOfSelfImprovement}
-% \end{itemize}
-
-There are different approaches on how to classify and describe Self-Adaptive Systems,
-which all focus on different usages, the three approaches that will be highlighted by this paper are:
+There are different approaches on how to classify and describe Self-Adaptive Systems which all focus on different usages.
+The three approaches that will be highlighted by this paper are:
 \begin{itemize}
     \item FORMS from Weyns et al., 2012 \cite*{FORMS}
     \item Berns and Ghosh, 2009 definition of self-* properties \cite*{DissectingSelfProperties}
     \item Krupitzer's et al., 2015 taxonomy for Self-Adaptive Systems \cite*{SurveyOnEngineeringApproaches}
 \end{itemize} 
-All of these approaches contain ideas that will be used to construct the classification for
+These approaches contain ideas that will be used to construct the classification for
 Optimization Approaches for Self-Adaptive Systems in the next chapter.
 \newline
 \par
@@ -39,7 +24,7 @@ Optimization Approaches for Self-Adaptive Systems in the next chapter.
 \end{figure*}
 In their 2012 paper FORMS \cite{FORMS} Weyns et al. propose a formal reference model for describing Self-Adaptive Systems.
 The goal of FORMS is to provide a well defined basis for talking and reasoning about Self-Adaptive Systems.
-This is achieved by providing a definition of FORMS, which classifies Self-Adaptive Systems, using Z notation.
+This is achieved by providing a definition of FORMS which classifies Self-Adaptive Systems using Z notation.
 By composing a Self-Adaptive System from different levels of components called subsystems,
 where each level can adapt the level beneath, FORMS models the self-adaptive process using reflection.
 The bottom level is populated by base components and domain models.
@@ -59,19 +44,20 @@ Optimization Approaches for Self-Adaptive Systems from Self-Adaptive Systems.
     \caption{self-* properties by Berns and Ghosh, 2009 \cite*{DissectingSelfProperties}}
     \label{fig:SelfProperties}
 \end{figure*}
+Although some of the first papers on Self-Adaptive Systems, for example, 
+"The Vision of Autonomic Computing" by Kephart and Chess \cite*{VisionOfAutonomicComputing} focused on self-adaptation,
+there are other aspects of software systems that can benefit from the ideas introduced by Self-Adaptive Systems.
+Berns and Ghosh, 2009 \cite*{DissectingSelfProperties} identified and described such aspects which they call self-* properties.
+These self-properties can be seen in Figure \ref{fig:SelfProperties}.
+They are useful to:
+\begin{itemize}
+    \item Communicate the abilities and goals of a system.
+    \item Establish well-defined goals for the system.
+\end{itemize}
 
-
-While some of the first ideas for Self-Adaptive Systems focused on self-adaptation, 
-like "The Vision of Autonomic Computing" by Kephart and Chess \cite*{VisionOfAutonomicComputing},
-there are other aspects of software systems that can benefit from the ideas of Self-Adaptive Systems.
-These aspects are called self-* properties.
-Berns and Ghosh, 2009 \cite*{DissectingSelfProperties} identified and described the self-properties in Figure \ref{fig:SelfProperties}.
-These self-* properties can be useful to either
-quickly communicate the abilities and goals of a Self-Adaptive System
-or to establish well-defined goals for the system.
-
-% TODO: What is useful about this
-% TODO: How is this used by the proposal
+These self-* properties show that there are aspects besides the management of software which can benefit from the ideas of Self-Adaptation.
+This will be useful for the proposed classification as it gives a clear setting for the Optimization Approaches to work within.
+% TODO: OA for SAS should only focus on Self-Adaptation, other abilities should be ignored.
 
 \newpage
 \begin{figure*}[t!]
@@ -107,7 +93,7 @@ For this purpose the Time dimension differentiates between systems that perform 
 
 \subparagraph*{What}
 In addition to the question of where and when changes should occur, it is also important to know
-what changes should occur. There are different techniques, that can be used.
+what changes should occur. There are different techniques that can be used.
 The Technique dimension of the taxonomy differentiates between systems that change parameters, their structure or their context.
 
 \subparagraph*{Who}
@@ -144,23 +130,20 @@ the behavior of the systems environment can generally not be controlled complete
 Another dimension of Self-Adaptive Systems that can not be optimized, or is not useful to optimize,
 is the Time dimension. This dimension is mostly a design decision on how the system should behave and be constructed.
 It is also a question of how to handle uncertainty and the level of accepted risk.
-A proactive system can prevent faults and degradation in Quality-of-Service metrics 
-but it can also predict the wrong changes, which can lead to a situation where the system itself generates faults by
+A proactive system can prevent faults and degradation in Quality-of-Service metrics,
+but it can also predict the wrong changes which can lead to a situation where the system itself generates faults by
 reacting in a way that is contradictive to its goals.
-A reactive system can not prevent faults like a proactive system
-but its behavior can be much more stable because it only has to react to a change and not also predict that change.
+A reactive system can not prevent faults like a proactive system,
+but its behavior can be much more stable, because it only has to react to a change and not predict that change as well.
 \newline
 \par
 
-Lastly the question of who is responsible can not be optimized because the taxonomy simply answers it,
+Lastly, the question of who is responsible can not be optimized, because the taxonomy simply answers it,
 by referring to the name "Self-Adaptive System" which implies that the system itself is responsible for managing adaptations.
 \newline
 \par
 
-% TODO: Which parts can be optimized
-% - Adaptation control
-% - Technique
-% - Level
+
 The three remaining dimensions can be optimized or can benefit from being adapted dynamically.
 These are the Adaptation Control, the Level and the Technique.
 \newline
@@ -168,8 +151,8 @@ These are the Adaptation Control, the Level and the Technique.
 
 The Approach and the Degree of Decentralization used by the Adaptation Control can not be optimized 
 because they are design decisions of how the system is built.
-But the Adaptation Decision Criteria can be optimized. An optimization of the Adaptation Decision Criteria
-could for example be to dynamically adapt the rules and policies at runtime to better reflect a changing environment.
+However, the Adaptation Decision Criteria can be optimized. An optimization of the Adaptation Decision Criteria
+could, for example, be to dynamically adapt the rules and policies at runtime to better reflect a changing environment.
 \newline
 \par
 
@@ -178,8 +161,21 @@ This can be optimized by changing what gets adapted by the system.
 \newline
 \par
 
-The last dimension that can be optimized is the level, which can be optimized by dynamically changing at which level of the system
+The last dimension that can be optimized is the Level, which can be done by dynamically changing at which level of the system
 adaptations should be performed.
+\newline
+\par
 
-% TODO: Current landscape of Optimization Approaches???
-% Do I really want to put this here?
+
+This explanation of how Self-Adaptive Systems are classified,
+leads us to how we can classify Optimization Approaches for Self-Adaptive Systems.
+The main concepts that will be used for the classification of Optimization Approaches are:
+\begin{itemize}
+    \item The concept of reflectiveness as a way to model self-adaptation.
+    \item The 5W+1H questions to determine how a Self-Adaptive System operates.
+    \item The MAPE-K feedback loop a general base for understanding Self-Adaptive Systems.
+    \item The concept of self-* properties which enables us to differentiate between self-adaptation
+    and other self-* abilities.
+    \item A taxonomy for Self-Adaptive Systems which will be the basis for the proposed classification of Optimization Approaches,
+    because Self-Adaptive Systems are so closely related to their Optimization Approaches.
+\end{itemize}

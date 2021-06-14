@@ -1,107 +1,76 @@
 \newpage
-\section{Proposal for classification of optimization approaches}
+\section{Proposal for Classification of Optimization Approaches}
 \label{ch:Proposal}
 
-% TODO:
-% - Deriving:
-%     - SAS Taxonomy by Krupitzer et al
-%     - How did Krupitzer get to his taxonomy?
-%     - 5W+1H questions
-%     - Classification proposed by: The Application of ML
-% - Proposing:
-%     - Explain each part:
-%         - Purpose
-%         - Time
-%         - Technique
-%         - Location
-%         - Concern
-%     - What to explain:
-%         - Why?
-%         - How is it different from the other properties?
+% TODO: The proposal in Application of ML paper
 
-% \begin{itemize}
-%     \item Deriving a classification for optimization approaches for Self-Adaptive Systems.
-%     \item Proposing a classification for optimization approaches for Self-Adaptive Systems.
-% \end{itemize}
-
-% \paragraph*{Literature for this section:} \begin{itemize}
-%     \item "The Application of Machine Learning in Self-Adaptive Systems: A Systematic Literature Review" \cite{ApplicationOfMachineLearning}
-% \end{itemize}
-
-% TODO: Deriving a classification}
-% TODO: reference for MAPE
-% TODO: FUSION and other OA just update a knowledge base (MAPE-K) and dont directly adapt the system
-% so maybe RAC is not the perfect name for that category: changing structure vs providing knowledge
-% approach: not if RAC is internal/external but if the OA is internal/external
-% This would also make the classification more relevant!
-Using the idea from Weyns et al. 2012 paper FORMS \cite*{FORMS} to compose Self-Adaptive Systems from
-layers of base and reflective components, 
-an Optimization Approach for Self-Adaptive Systems can be thought of
-as a reflective component in a layer above the Self-Adaptive System.
-This allows the application of multiple Optimization Approaches and even the 
-optimization of Optimization Approaches.
-It also establishes a connection between Optimization Approaches and Self-Adaptive Systems
-and leads to the realization that a classification for Optimization Approaches of Self-Adaptive Systems
-should be based upon the same principles as the classifications for Self-Adaptive Systems.
-Another benefit is a clear distinction between Self-Adaptive Systems and Optimization Approaches for Self-Adaptive Systems:
-While Self-Adaptive Systems and Optimization Approaches are both composed of reflective components and not base components,
-the Self-Adaptive System adapts base components, while the Optimization Approach adapts other reflective components.
-\newline
-\par
-
-
-Following Krupitzer's et al, 2015 \cite*{SurveyOnEngineeringApproaches} taxonomy for Self-Adaptive Systems,
-a classification for Optimization Approaches of Self-Adaptive Systems should answer 
-the 5W+1H questions by Salehie and Tahvildari, 2009 \cite*{LandscapeAndResearchChallenges}.
-These questions are: Where, When, What, Why, Who and How?
-% These questions are:
-% \begin{itemize}
-%     \item Where is the need for change?
-%     \item When should a change occur?
-%     \item What should be changed?
-%     \item Why should something be changed?
-%     \item Who should change something?
-%     \item How should something be changed?
-% \end{itemize}
-
-\begin{figure}[h!]
+\begin{figure}[t]
     \centering
-    \includegraphics[width=0.6\columnwidth]{images/ClassificationProposal-OptimizationMAPEK.png}
+    \includegraphics[width=0.8\textwidth]{images/ClassificationProposal-OptimizationMAPEK_horizontal.png}
     \caption{Mapping the optimization process to the MAPE-K feedback loop.}
     \label{fig:MappingOptMAPEK}
 \end{figure}
+
+Using the idea from Weyns et al. 2012 paper FORMS \cite*{FORMS} to compose Self-Adaptive Systems from
+layers of base and reflective components, 
+an Optimization Approach for Self-Adaptive Systems can be thought of
+as a reflective component in a layer above the Self-Adaptive System. \\
+This allows the application of multiple Optimization Approaches and even the 
+optimization of Optimization Approaches. \\
+It also establishes a connection between Optimization Approaches and Self-Adaptive Systems.
+This leads to the realization that a classification for Optimization Approaches of Self-Adaptive Systems
+should be based upon the same principles as the classifications for Self-Adaptive Systems. \\
+Another benefit is a clear distinction between Self-Adaptive Systems and Optimization Approaches for Self-Adaptive Systems.
+Self-Adaptive Systems and Optimization Approaches are both composed of reflective components and not base components. \\
+Yet the Self-Adaptive System adapts base components, while the Optimization Approach adapts other reflective components.
+\newline
+\par
+
 
 Just like the adaptation process of Self-Adaptive Systems can be understood using
 the MAPE-K (Monitor-Analyze-Plan-Execute with Knowledge) feedback loop by Kephart and Chess, 2003 \cite*{VisionOfAutonomicComputing}.
 The process of optimizing a Self-Adaptive System can also be expressed using the MAPE-K feedback loop:
 \begin{itemize}
     \item Firstly the optimization approach has to constantly monitor the Self-Adaptive System and its context.
-    \item The data gathered from monitoring can then be analyzed to decided wether or not an optimization is necessary and what should be optimized.
+    \item The data gathered from monitoring can then be analyzed to decide wether or not an optimization is necessary and what should be optimized.
     \item After deciding that something should be optimized, there needs to be a plan on how to optimize.
     \item Lastly the planned optimization can be executed.
-    \item For all of this the optimization approach requires knowledge about the Self-Adaptive System and its context.
+    \item During all of these steps the optimization approach requires knowledge about the Self-Adaptive System and its context.
 \end{itemize}
 
-% TODO: Proposing a classification
-% TODO: transition to proposal
-\newpage
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\columnwidth]{images/ClassificationProposal-WithDimensions.png}
+    \includegraphics[width=0.8\textwidth]{images/ClassificationProposal-WithDimensions.png}
     \caption{The proposed classification for Optimization Approaches for Self-Adaptive Systems}
     \label{fig:Proposal}
 \end{figure}
+
+Following Krupitzer's et al, 2015 \cite*{SurveyOnEngineeringApproaches} taxonomy for Self-Adaptive Systems,
+a classification for Optimization Approaches of Self-Adaptive Systems should answer 
+the 5W+1H questions by Salehie and Tahvildari, 2009 \cite*{LandscapeAndResearchChallenges}.
+These questions are: Where, When, What, Why, Who and How?
+\newline
+\par
+
+
+Figure \ref{fig:Proposal} shows the proposed classification for Optimization Approaches for Self-Adaptive Systems.
+The classification consists of six dimensions: Location, Time, Purpose, Approach, Technique and Reflective Adaptation Control.
+Each dimension is related to one of the 5W+1H questions.
+\newline
+\par
+
 
 \subparagraph*{Location}
 Where in the system is an optimization necessary? \\
 There are three main parts in a Self-Adaptive System that can require optimizations during its lifetime.
 These are:
 \begin{itemize}
-    \item The Adaptation Control.
-    \item The Level on which adaptations are performed
+    \item The Adaptation Control which can, for example, be optimized by changing or generating new adaptation rules.
+    \item The Level on which adaptations are performed.
     \item The Technique that is used to perform adaptations.
 \end{itemize}
 
+\newpage
 \subparagraph*{Time}
 When are optimizations performed? \\
 Similarly to Self-Adaptive Systems, Optimization Approaches can be differentiated by comparing when they perform optimizations.
@@ -119,7 +88,7 @@ or when generating a new model for the system by training an updated domain mode
 \subparagraph*{Technique}
 What gets changed to perform the optimization? \\
 What gets changed in a Self-Adaptive System relates to where an optimization is necessary.
-Because of this, the following parts can be changed:
+Thus, the following parts can be changed:
 \begin{itemize}
     \item The Rules / Policies used by the Adaptation Decision Criteria.
     \item The Knowledge of the system, which for example can consist of domain models.
@@ -132,21 +101,23 @@ like legal or safety parameters, of which the system has no intrinsic knowledge.
 
 \subparagraph*{Purpose}
 Why should an optimization occur? \\
-This is perhaps the most important question for any Optimization Approach because it determines if an optimization is necessary.
+This is perhaps the most important question for any Optimization Approach as it determines if an optimization is necessary.
 There can be several reasons for performing an optimization in a Self-Adaptive System:
 \begin{itemize}
-    \item The system learned new information about for example its environment and needs to update its domain models.
-    \item Because of external or internal changes, a Goal might not be satisfiable anymore.
+    \item The system learned new information about, for example, its environment and needs to update its domain models.
+    \item Due to of external or internal changes, a Goal might not be satisfiable anymore.
     \item The difference of the actual versus the expected outcome of a rule / policy has exceeded a threshold.
     \item A Utility function needs to be maximized or minimized.
 \end{itemize}
 
-% TODO: Approach outside of Adaptation Control because of the original meaning
-% of the question: level of automation vs human interaction.
-% Self-Adaptive Systems: trivially should only be adapted by themselves.
-% Optimization approaches: there might be human intervention necessary -> ML: learning trap, unpredicatability
 \subparagraph*{Approach}
 Who is responsible for performing the optimization? \\
+The original "Who?" question by Salehie and Tahvildari focuses on the level of human intervention that is need by the system.
+Self-Adaptive Systems have no need for human intervention, because they operate on clearly defined rule sets.
+It is in the nature of Optimization Approaches for Self-Adaptive Systems to change these rule sets.
+This can lead to problems that make human intervention necessary.
+A result of this is that, in contrast to the the taxonomy for Self-Adaptive Systems, 
+the Approach for Optimization Approaches should be its own dimension.
 \begin{itemize}
     \item Is there an internal component that performs changes or are they performed by an external actor.
     \item Which degree of decentralization is used?
@@ -158,63 +129,68 @@ Who is responsible for performing the optimization? \\
 How is the optimization applied to the system? \\
 Just like the Self-Adaptive System can be described by its Adaptation Control,
 which is responsible for applying changes to the system,
-an optimization approach can also be described by how it applies its optimizations to the system.
+an Optimization Approach can also be described by how it applies its optimizations to the system.
 In reference to FORMS by Weyns et al., 2012\cite*{FORMS}, which uses reflective operations to change
 components in the system, the Adaptation Control of the optimization approach will be called Reflective Adaptation Control.
-
-Unlike the Adaptation Control of Self-Adaptive Systems, 
-the Reflective Adaptation Control does not have a dimension for the Approach, because it has its own separate dimension.
+The Reflective Adaptation Control can be classified by the following behaviors:
 \begin{itemize}
-    \item Adaptation Decision Criteria: \begin{itemize}
-        \item Models: The system updates its models after receiving new information about its models.
-        \item Rules / Policies: If the system detects, that it is in a state for which an adaptation rule/policy exists,
-        it should perform that adaptation.
-        \item Goals: Adaptation should be performed if the system does not meet pre-defined goals.
-        \item Utility: An adaptation occurs to maximize or minimize a utility function.
-    \end{itemize}
+    \item Models: The system updates its models after receiving new information about its models.
+    \item Rules / Policies: If the system detects, that it is in a state for which an adaptation rule/policy exists,
+    it should perform that adaptation.
+    \item Goals: Adaptation should be performed if the system does not meet pre-defined goals.
+    \item Utility: An adaptation occurs to maximize or minimize a utility function.
 \end{itemize}
 
+\newpage
+
 Because the proposed classification is based upon the MAPE-K feedback loop and the 5W+1H questions,
-it is useful to map the classification to each of these models.
-\begin{figure}[h!]
+it is useful to understand how they relate to each other.
+This is depicted in Figures \ref{fig:MapeOA} and \ref{fig:QuestionsOA}.
+
+\begin{figure}[h]
     \centering
     \begin{tabular}{|lcl|}
         \hline
-        MAPE-K & & Optimization Approach \\
+        Optimization Approach & & MAPE-K \\
         \hline
-        Monitor & & \\
+        Location & & Monitor, Analyze, Execute \\
         \hline
-        Analyze & & Location\\
+        Time & & Monitor, Execute \\
         \hline
-        Plan & & Technique \\
+        Technique & & Plan, Execute \\
         \hline
-        Execute & & Reflective Adaptation Control \\
+        Purpose & & Analyze \\
+        \hline
+        Approach & & Plan, Execute \\
+        \hline
+        Reflective Adaptation Control & & Plan, Execute \\
         \hline
     \end{tabular}
     \caption{How the MAPE-K feedback loop by Kephart and Chess, 2003\cite*{VisionOfAutonomicComputing}
     relates to the dimensions of the classification for Optimization Approaches for Self-Adaptive Systems.}
+    \label{fig:MapeOA}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
     \begin{tabular}{|lcl|}
         \hline
-        5W+1H questions & & Optimization Approach \\
+        Optimization Approach & & 5W+1H questions \\
         \hline
-        Where & & Location \\
+        Location & & Where \\
         \hline
-        When & & Time \\
+        Time & & When \\
         \hline
-        What & & Technique \\
+        Technique & & What \\
         \hline
-        Why & & Purpose \\
+        Purpose & & Why \\
         \hline
-        Who & & Approach \\
+        Approach & & Who \\
         \hline
-        How & & Reflective Adaptation Control \\
+        Reflective Adaptation Control & & How \\
         \hline
     \end{tabular}
     \caption{How the 5W+1H questions by Salehie and Tahvildari, 2009 \cite*{LandscapeAndResearchChallenges}
     relate to the dimensions of the classification for Optimization Approaches for Self-Adaptive Systems.}
-    \label{fig:5W1HProposal}
+    \label{fig:QuestionsOA}
 \end{figure}
