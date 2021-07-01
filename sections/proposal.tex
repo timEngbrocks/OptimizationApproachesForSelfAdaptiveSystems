@@ -8,52 +8,52 @@
     \label{fig:MappingOptMAPEK}
 \end{figure}
 
-This chapter will derive and propose a classification for \acrlong{oa}[es] for \acrlong{sas}
+This chapter will derive and propose a classification for \acrshort{oa} for \acrlong{sas}
 based on concepts that were discussed in chapter \ref{ch:SASClassification}.
 
-\noindent Using the idea from Weyns et al. 2012 paper FORMS \cite*{FORMS} to compose \acrlong{sas}[s] from
+\noindent Using the idea from Weyns et al. 2012 paper FORMS \cite*{FORMS} to compose \acrshort{sas} from
 layers of base and reflective components, 
-an \acrlong{oa} for \acrlong{sas}[s] can be thought of
+an \acrlong{oa} for \acrshort{sas} can be thought of
 as a reflective component in a layer above the \acrshort{sas}. \\
 This allows the application of multiple \acrshort{oa} to \acrshort{sas} and even the 
 optimization of \acrshort{oa}. \\
-It also establishes a connection between \acrshort{oa} and \acrlong{sas}[s].
-This leads to the realization that a classification for \acrshort{oa} of \acrlong{sas}[s]
-should be based upon the same principles as the classifications for \acrlong{sas}[s]. \\
-Another benefit of this approach is a clear distinction between \acrlong{sas}[s] and \acrshort{oa} for \acrlong{sas}[s].
-\acrlong{sas}[s] and \acrshort{oa} are both composed of reflective components and not base components. \\
-Yet the Self-Adaptive System adapts base components, while the Optimization Approach adapts other reflective components.
+It also establishes a connection between \acrshort{oa} and \acrshort{sas}.
+This leads to the realization that a classification for \acrshort{oa} of \acrshort{sas}
+should be based upon the same principles as the classifications for \acrshort{sas}. \\
+Another benefit of this approach is a clear distinction between \acrshort{sas} and \acrshort{oa} for \acrshort{sas}.
+\acrshort{sas} and \acrshort{oa} are both composed of reflective components and not base components. \\
+Yet the \acrshort{sas} adapts base components, while the \acrshort{oa} adapts other reflective components.
 
-\noindent Just like the adaptation process of \acrlong{sas}[s] can be understood using
+\noindent Just like the adaptation process of \acrshort{sas} can be understood using
 the \acrshort{mapek} feedback loop by Kephart and Chess, 2003 \cite*{VisionOfAutonomicComputing}.
-The process of optimizing a Self-Adaptive System can also be expressed using the \acrshort{mapek} feedback loop:
+The process of optimizing a \acrshort{sas} can also be expressed using the \acrshort{mapek} feedback loop:
 \begin{itemize}[nosep]
-    \item Firstly the optimization approach has to constantly monitor the Self-Adaptive System and its context.
+    \item Firstly the \acrshort{oa} has to constantly monitor the \acrshort{sas} and its context.
     \item The data gathered from monitoring can then be analyzed to decide wether or not an optimization is necessary and what should be optimized.
     \item After deciding that something should be optimized, there needs to be a plan on how to optimize.
     \item Lastly the planned optimization can be executed.
-    \item During all of these steps the optimization approach requires knowledge about the Self-Adaptive System and its context.
+    \item During all of these steps the \acrshort{oa} requires knowledge about the \acrshort{sas} and its context.
 \end{itemize}
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{images/ClassificationProposal-WithDimensions.png}
-    \caption{The proposed classification for \acrlong{oa}[es] for \acrlong{sas}[s]}
+    \caption{The proposed classification for \acrshort{oa} for \acrshort{sas}}
     \label{fig:Proposal}
 \end{figure}
 
-\noindent Following Krupitzer's et al, 2015 \cite*{SurveyOnEngineeringApproaches} taxonomy for \acrlong{sas}[s],
-a classification for Optimization Approaches of \acrlong{sas}[s] should answer 
+\noindent Following Krupitzer's et al, 2015 \cite*{SurveyOnEngineeringApproaches} taxonomy for \acrshort{sas},
+a classification for \acrshort{oa} of \acrshort{sas} should answer 
 the 5W+1H questions by Salehie and Tahvildari, 2009 \cite*{LandscapeAndResearchChallenges}.
 These questions are: Where, When, What, Why, Who and How?
 
-\noindent Figure \ref{fig:Proposal} shows the proposed classification for Optimization Approaches for \acrlong{sas}[s].
+\noindent Figure \ref{fig:Proposal} shows the proposed classification for \acrshort{oa} for \acrshort{sas}.
 The classification consists of six dimensions: Location, Time, Purpose, Approach, Technique and Reflective Adaptation Control.
 Each dimension is related to one of the 5W+1H questions.
 
 \subparagraph*{Location}
 Where in the system is an optimization necessary? \\
-There are three main parts in a Self-Adaptive System that can be optimized as explained in chapter \ref{ch:SASClassification}.
+There are three main parts in a \acrshort{sas} that can be optimized as explained in chapter \ref{ch:SASClassification}.
 These are:
 \begin{itemize}[nosep]
     \item The Adaptation Control which can, for example, be optimized by changing or generating new adaptation rules.
@@ -63,8 +63,8 @@ These are:
 
 \subparagraph*{Time}
 When are optimizations performed? \\
-Similarly to \acrlong{sas}[s], Optimization Approaches can be differentiated by comparing when they perform optimizations.
-There are three different phases during the lifetime of a Self-Adaptive System where optimizations can occur.
+Similarly to \acrshort{sas}, \acrshort{oa} can be differentiated by comparing when they perform optimizations.
+There are three different phases during the lifetime of a \acrshort{sas} where optimizations can occur.
 These are:
 \begin{itemize}[nosep]
     \item At the runtime of the system, which can also be called the online phase.
@@ -72,27 +72,27 @@ These are:
     \item While training the system or during its offline phase.
 \end{itemize}
 The training phase can happen in parallel to the run and design time of the system.
-Examples for this would be when the initial parameters for a Self-Adaptive System are chosen by training a domain model
+Examples for this would be when the initial parameters for a \acrshort{sas} are chosen by training a domain model
 or when generating a new model for the system by training an updated domain model parallel to the running system.
 
 \subparagraph*{Technique}
 What gets changed to perform the optimization? \\
-What gets changed in a Self-Adaptive System relates to where an optimization is necessary.
+What gets changed in a \acrshort{sas} relates to where an optimization is necessary.
 Thus, the following parts can be changed:
 \begin{itemize}[nosep]
     \item The Rules / Policies used by the Adaptation Decision Criteria.
     \item The Knowledge of the system, which for example can consist of domain models.
-    \item The Adaptation Technique used by the Self-Adaptive System.
-    \item The Level on which the Self-Adaptive System performs changes.
+    \item The Adaptation Technique used by the \acrshort{sas}.
+    \item The Level on which the \acrshort{sas} performs changes.
 \end{itemize}
-One could argue that the Goals or especially Utility functions of a Self-Adaptive System could also be changed to optimize its performance.
+One could argue that the Goals or especially Utility functions of a \acrshort{sas} could also be changed to optimize its performance.
 In most cases this is not advisable because Goals and Utility functions can encode information
 like legal or safety parameters, of which the system has no intrinsic knowledge.
 
 \subparagraph*{Purpose}
 Why should an optimization occur? \\
-This is perhaps the most important question for any Optimization Approach as it determines if an optimization is necessary.
-There can be several reasons for performing an optimization in a Self-Adaptive System:
+This is perhaps the most important question for any \acrshort{oa} as it determines if an optimization is necessary.
+There can be several reasons for performing an optimization in a \acrshort{sas}:
 \begin{itemize}[nosep]
     \item The system learned new information about, for example, its environment and needs to update its domain models.
     \item Due to external or internal changes, a Goal might not be satisfiable anymore.
@@ -103,11 +103,11 @@ There can be several reasons for performing an optimization in a Self-Adaptive S
 \subparagraph*{Approach}
 Who is responsible for performing the optimization? \\
 The original "Who?" question by Salehie and Tahvildari focuses on the level of human intervention that is need by the system.
-\acrlong{sas}[s] have no need for human intervention, because they operate on clearly defined rule sets.
-It is in the nature of Optimization Approaches for \acrlong{sas}[s] to change these rule sets.
+\acrshort{sas} have no need for human intervention, because they operate on clearly defined rule sets.
+It is in the nature of \acrshort{oa} for \acrshort{sas} to change these rule sets.
 This can lead to problems that make human intervention necessary.
-A result of this is that, in contrast to the the taxonomy for \acrlong{sas}[s], 
-the Approach for Optimization Approaches should have its own dimension.
+A result of this is that, in contrast to the the taxonomy for \acrshort{sas}, 
+the Approach for \acrshort{oa} should have its own dimension.
 \begin{itemize}[nosep]
     \item Is there an internal component that performs changes or are they performed by an external actor.
     \item Which degree of decentralization is used?
@@ -117,11 +117,11 @@ the Approach for Optimization Approaches should have its own dimension.
 
 \subparagraph*{Reflective Adaptation Control}
 How is the optimization applied to the system? \\
-Just like the Self-Adaptive System can be described by its Adaptation Control,
+Just like the \acrshort{sas} can be described by its Adaptation Control,
 which is responsible for applying changes to the system,
-an Optimization Approach can also be described by how it applies its optimizations to the system.
+an \acrshort{oa} can also be described by how it applies its optimizations to the system.
 In reference to FORMS by Weyns et al., 2012\cite*{FORMS}, which uses reflective operations to change
-components in the system, the Adaptation Control of the optimization approach will be called Reflective Adaptation Control.
+components in the system, the Adaptation Control of the \acrshort{oa} will be called Reflective Adaptation Control.
 The Reflective Adaptation Control can be classified by the following behaviors:
 \begin{itemize}[nosep]
     \item Models: The system updates its models after receiving new information about its models.
@@ -155,7 +155,7 @@ This is depicted in Figures \ref{fig:MapeOA} and \ref{fig:QuestionsOA}.
         \hline
     \end{tabular}
     \caption{How the \acrshort{mapek} feedback loop by Kephart and Chess, 2003\cite*{VisionOfAutonomicComputing}
-    relates to the dimensions of the classification for Optimization Approaches for \acrlong{sas}[s].}
+    relates to the dimensions of the classification for \acrshort{oa} for \acrshort{sas}.}
     \label{fig:MapeOA}
 \end{figure}
 
@@ -179,7 +179,7 @@ This is depicted in Figures \ref{fig:MapeOA} and \ref{fig:QuestionsOA}.
         \hline
     \end{tabular}
     \caption{How the 5W+1H questions by Salehie and Tahvildari, 2009 \cite*{LandscapeAndResearchChallenges}
-    relate to the dimensions of the classification for Optimization Approaches for \acrlong{sas}[s].}
+    relate to the dimensions of the classification for \acrshort{oa} for \acrshort{sas}.}
     \label{fig:QuestionsOA}
 \end{figure}
 

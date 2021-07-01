@@ -9,7 +9,7 @@ The three approaches that will be highlighted by this section are:
     \item Krupitzer's et al., 2015 taxonomy for \acrlong{sas}[s] \cite*{SurveyOnEngineeringApproaches}
 \end{itemize} 
 These approaches contain ideas that will be used to construct the classification for
-Optimization Approaches for \acrlong{sas}[s] in the next chapter.
+\acrshort{oa} for \acrshort{sas} in the next chapter.
 
 %% FORMS
 % - reflection
@@ -19,9 +19,9 @@ Optimization Approaches for \acrlong{sas}[s] in the next chapter.
     \caption{FORMS primitives by Weyns et al., 2012 \cite*{FORMS}}
     \label{fig:FORMS}
 \end{figure*}
-\noindent In their 2012 paper FORMS \cite{FORMS} Weyns et al. propose a formal reference model for describing \acrlong{sas}[s].
-The goal of FORMS is to provide a well defined basis for talking and reasoning about \acrlong{sas}[s].
-This is achieved by providing a definition of FORMS which classifies \acrlong{sas}[s] using Z notation.
+\noindent In their 2012 paper FORMS \cite{FORMS} Weyns et al. propose a formal reference model for describing \acrshort{sas}.
+The goal of FORMS is to provide a well defined basis for talking and reasoning about \acrshort{sas}.
+This is achieved by providing a definition of FORMS which classifies \acrshort{sas} using Z notation.
 Z notation is used for formal specifications and is based upon Zermelo-Fraenkel set theory.
 It is mathematically well-defined and often used to describe software systems.
 
@@ -45,11 +45,11 @@ which automatically updates the robots software to the latest version.
 For this, the updater has to examine the robots software and modify it.
 In other words, the updater is a reflective component.
 
-Another example for composing \acrlong{sas}[s] from base and reflective components and layers
+Another example for composing \acrshort{sas} from base and reflective components and layers
 from the original paper by Weyns et al. is depicted in Figure \ref{fig:FORMS}.
 
 \noindent The concept of different layers of reflection will be useful later to distinguish
-Optimization Approaches for \acrlong{sas}[s] from \acrlong{sas}[s].
+\acrshort{oa} for \acrshort{sas} from \acrshort{sas}.
 
 %% self-* properties
 \begin{figure*}[t!]
@@ -57,9 +57,11 @@ Optimization Approaches for \acrlong{sas}[s] from \acrlong{sas}[s].
     \caption{self-* properties by Berns and Ghosh, 2009 \cite*{DissectingSelfProperties}}
     \label{fig:SelfProperties}
 \end{figure*}
-\noindent Although some of the first papers on \acrlong{sas}[s], for example, 
+
+\newpage
+\noindent Although some of the first papers on \acrshort{sas}, for example, 
 "The Vision of Autonomic Computing" by Kephart and Chess \cite*{VisionOfAutonomicComputing} focused on self-adaptation,
-there are other aspects of software systems that can benefit from the ideas introduced by \acrlong{sas}[s].
+there are other aspects of software systems that can benefit from the ideas introduced by \acrshort{sas}.
 Berns and Ghosh, 2009 \cite*{DissectingSelfProperties} identified and described such aspects which they call self-* properties.
 These self-* properties can be seen in Figure \ref{fig:SelfProperties}.
 They are useful to:
@@ -68,24 +70,22 @@ They are useful to:
     \item Establish well-defined goals for the system.
 \end{itemize}
 
-
-
 \noindent These self-* properties show that there are aspects besides the management of software which can benefit from the ideas of Self-Adaptation.
-This will be useful for the proposed classification as it gives a clear setting for the Optimization Approaches to work within.
+This will be useful for the proposed classification as it gives a clear setting for the \acrshort{oa} to work within.
 
 \begin{figure*}[t!]
     \includegraphics[width=\textwidth]{images/KrupitzerTaxonomy.jpg}
-    \caption{Taxonomy for \acrlong{sas}[s] by Krupitzer et al., 2015 \cite*{SurveyOnEngineeringApproaches}}
+    \caption{Taxonomy for \acrshort{sas} by Krupitzer et al., 2015 \cite*{SurveyOnEngineeringApproaches}}
     \label{fig:KrupitzerTaxonomy}
 \end{figure*}
 
-\noindent The taxonomy for \acrlong{sas}[s] by Krupitzer's et al., 2015 \cite*{SurveyOnEngineeringApproaches} in Figure \ref{fig:KrupitzerTaxonomy}
+\noindent The taxonomy for \acrshort{sas} by Krupitzer's et al., 2015 \cite*{SurveyOnEngineeringApproaches} in Figure \ref{fig:KrupitzerTaxonomy}
 is based upon the 5W+1H questions by Salehie and Tahvildari, 2009 \cite*{LandscapeAndResearchChallenges}.
 These questions are: Where, When, What, Why, Who and How.
-Each of these questions is responsible for a different aspect of \acrlong{sas}[s] and corresponds to a dimension of the taxonomy.
+Each of these questions is responsible for a different aspect of \acrshort{sas} and corresponds to a dimension of the taxonomy.
 
 \subparagraph*{Why}
-First there needs to be a reason for a Self-Adaptive System to adapt. Why an adaptation should be performed is answered by the Reason dimension.
+First there needs to be a reason for a \acrshort{sas} to adapt. Why an adaptation should be performed is answered by the Reason dimension.
 According to the taxonomy reasons for an adaptation can be changes in either the context, a technical resource or changes caused by the user.
 
 \subparagraph*{Where}
@@ -99,7 +99,7 @@ The different levels on which changes can occur include:
 \end{itemize}
 
 \subparagraph*{When}
-While the original When-Question by Salehie and Tahvildari tries to understand all temporal aspects of \acrlong{sas}[s],
+While the original When-Question by Salehie and Tahvildari tries to understand all temporal aspects of \acrshort{sas},
 including how frequently changes should occur and if they happen continously,
 the taxonomy only answers the question when changes should be performed.
 For this purpose the Time dimension differentiates between systems that perform changes proactively or reactively.
@@ -139,18 +139,18 @@ Krupitzer et al. propose the following possibilities:
     \item Goals: The \acrshort{sas} changes its behavior to meet some predefined set of goals.
     \item Utility: The \acrshort{sas} changes its behavior to maximize or minimize a utility function.
 \end{itemize}
-The approach divides \acrlong{sas}[s] into those where the adaptation logic is part of the application logic
+The approach divides \acrshort{sas} into those where the adaptation logic is part of the application logic
 and those with separated adaptation and application logic.
 
-\noindent After classifying \acrlong{sas}[s] the following question can be asked: Which parts of a Self-Adaptive System can be optimized?
+\noindent After classifying \acrshort{sas} the following question can be asked: Which parts of a \acrshort{sas} can be optimized?
 To answer this we will start by looking at which parts can not be optimized or do not benefit from optimization.
 
 \noindent The first part that can not be optimized is the environment which provides the Reason dimension.
-While the environment for a Self-Adaptive System can be chosen in a way which is most beneficial for the system
+While the environment for a \acrshort{sas} can be chosen in a way which is most beneficial for the system
 and can be influenced by actors,
 the behavior of the systems environment can generally not be controlled.
 
-\noindent Another dimension of \acrlong{sas}[s] that can not be optimized, or is not useful to optimize,
+\noindent Another dimension of \acrshort{sas} that can not be optimized, or is not useful to optimize,
 is the Time dimension. This dimension is mostly a design decision on how the system should behave and be constructed.
 It is also a question of how to handle uncertainty and the level of accepted risk.
 A proactive system can prevent faults and degradation in Quality-of-Service metrics,
@@ -160,7 +160,7 @@ A reactive system can not prevent faults like a proactive system,
 but its behavior can be much more stable, because it only has to react to a change and not predict that change as well.
 
 \noindent Lastly, the question of who is responsible can not be optimized, because the taxonomy simply answers it,
-by referring to the name "Self-Adaptive System" which implies that the system itself is responsible for managing adaptations.
+by referring to the name "\acrshort{sas}" which implies that the system itself is responsible for managing adaptations.
 
 \noindent The three remaining dimensions can be optimized or can benefit from being adapted dynamically.
 These are the Adaptation Control, the Level and the Technique.
@@ -176,15 +176,15 @@ This can be optimized by changing what gets adapted by the system.
 \noindent The last dimension that can be optimized is the Level, which can be done by dynamically changing at which level of the system
 adaptations should be performed.
 
-\noindent This explanation of how \acrlong{sas}[s] are classified,
-leads us to how we can classify Optimization Approaches for \acrlong{sas}[s].
-The main concepts that will be used for the classification of Optimization Approaches are:
+\noindent This explanation of how \acrshort{sas} are classified,
+leads us to how we can classify \acrshort{oa} for \acrshort{sas}.
+The main concepts that will be used for the classification of \acrshort{oa} are:
 \begin{itemize}[nosep]
     \item The concept of using reflectiveness to describe \acrshort{sas}.
-    \item The 5W+1H questions to determine how a Self-Adaptive System operates.
-    \item The \acrshort{mapek} feedback loop as a general base for understanding \acrlong{sas}[s].
+    \item The 5W+1H questions to determine how a \acrshort{sas}operates.
+    \item The \acrshort{mapek} feedback loop as a general base for understanding \acrshort{sas}.
     \item The concept of self-* properties which enables us to differentiate between self-adaptation
     and other self-* abilities.
-    \item A taxonomy for \acrlong{sas}[s] which will be the basis for the proposed classification of Optimization Approaches,
-    because \acrlong{sas}[s] are so closely related to their Optimization Approaches.
+    \item A taxonomy for \acrshort{sas} which will be the basis for the proposed classification of \acrshort{oa},
+    because \acrshort{sas} are so closely related to their \acrshort{oa}.
 \end{itemize}

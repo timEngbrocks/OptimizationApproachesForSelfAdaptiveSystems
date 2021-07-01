@@ -1,14 +1,6 @@
 \section{Introduction}
 \label{ch:Introduction}
 
-% \paragraph*{Literature for this section:} \begin{itemize}
-%     \item "An Introduction to Self-adaptive Systems: A Contemporary Software Engineering Perspective" \cite{SasIntroduction}
-%     \item "Software Engineering for \acrlong{sas}[s]: A Research Roadmap" \cite{ResearchRoadmap}
-%     \item "Software Engineering for \acrlong{sas}[s]: A Second Research Roadmap" \cite{SecondResearchRoadmap}
-%     \item "Claims and supporting evidence for self-adaptive systems: A literature study" \cite{ClaimsAndSupportingEvidence}
-%     \item "Self-Adaptive Software: Landscape and Research Challenges" \cite{LandscapeAndResearchChallenges}
-% \end{itemize}
-
 \begin{figure*}[hbt!]
     \centering
     \includegraphics[width=0.6\textwidth]{images/MAPEK.png}
@@ -34,6 +26,7 @@ In order to achieve this task of autonomous self-management, the system has to b
     \item and make changes to itself.
 \end{itemize}
 
+\newpage
 \noindent To model these abilities Kephart and Chess developed
 the \acrfull{mapek} feedback loop \cite*{VisionOfAutonomicComputing} shown in Figure \ref{fig:MAPEK}.
 
@@ -47,12 +40,12 @@ All of this happens with \textit{knowledge} of the environment and the system.
 \noindent Software systems that can autonomously manage themselves are called \acrfull{sas}[s]
 because of their ability to adapt themselves.
 
-\noindent To better understand \acrlong{sas}[s], let us take a look at a commonly used example.
+\noindent To better understand \acrshort{sas}, let us take a look at a commonly used example.
 Imaging you are the system administrator of a large scale online store.
 This store has four parameters: site traffic, number of purchases, number of active server instances and the number of served advertisements.
 During your day to day operations you encounter a common type of task:
 Update some system parameter X based on some metric Y.
-To make your job easier, you decide to use a \acrlong{sas} for these tasks
+To make your job easier, you decide to use a \acrshort{sas} for these tasks
 and come up with the following generalized adaptation rule:
 If metric Y crosses threshold Z, update the system parameter X.
 
@@ -63,7 +56,7 @@ if the number of system parameters was sufficiently small.
 But the \acrshort{sas} is better at handling large numbers of system parameters.
 
 
-\noindent While \acrlong{sas}[s] are better at handling more complex systems,
+\noindent While \acrshort{sas} are better at handling more complex systems,
 human operators are better at handling uncertainty.
 This has two reasons. 
 Firstly, the adaptation rules and policies used by \acrshort{sas} are statically created at design time.
@@ -72,14 +65,14 @@ Over time this leads to an increasing divergence between the expected results of
 when the environment changes in ways that were not predicted by developers during the design time of the system.
 
 \noindent This can be illustrated by the previous example.
-Imagine that the \acrlong{sas} has been in operation for some and you collected data on the systems performance.
+Imagine that the \acrshort{sas} has been in operation for some and you collected data on the systems performance.
 You notice that the \acrshort{sas} changes some system parameters too aggressively,
 because it performs an adaptation as soon as a metrics threshold has been violated.
 As a human operator you would have waited some time to see how the metric develops before performing an adaptation
 which would result in a smoother operation.
 The \acrshort{sas} can not handle this type of uncertainty and only reacted to the current state of its environment.
 
-\noindent Optimizations are necessary to improve the performance and effectiveness of \acrlong{sas}[s] in situations like these.
+\noindent Optimizations are necessary to improve the performance and effectiveness of \acrshort{sas} in situations like these.
 There are already many approaches on how to optimize \acrshort{sas}.
 Some of them focus on updating adaptation rules and policies during the systems runtime.
 Others dynamically change at which level of the system adaptations are performed.
@@ -96,7 +89,7 @@ Because of this, the existing \acrshort{oa} can not be easily compared
 and it is difficult to identify areas which require further research.
 This paper aims to provide such a classification for \acrlong{oa}[es] for \acrlong{sas}[s].
 
-\noindent To derive a classification for \acrlong{oa}[es] for \acrlong{sas}[s],
+\noindent To derive a classification for \acrshort{oa} for \acrshort{sas},
 chapter \ref{ch:SASClassification} will first explain how \acrshort{sas} are classified
 using three different approaches.
 Based on these approaches, a classification for \acrshort{oa} for \acrshort{sas} will be derived

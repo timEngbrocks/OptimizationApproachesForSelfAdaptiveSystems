@@ -22,7 +22,7 @@ Both of these cycles continuously run in parallel to each other.
     The design time is used to generate an initial model for the learning cycle.
     During the run time the learning cycle monitors adaptations
     and updates the Knowledge Base to improve future adaptations.
-    \item Technique: FUSION updates the rules used by the Self-Adaptive System and the shared knowledge base.
+    \item Technique: FUSION updates the rules used by the \acrshort{sas} and the shared knowledge base.
     \item Purpose: FUSION aims to decrease the difference between the expected and actual outcome of adaptation rules.
     \item Approach: FUSION acts as an external actor.
     \item Reflective Adaptation Control: FUSION applies optimizations by updating models and modifying rules.
@@ -41,18 +41,24 @@ conditions" (Sykes et al., 2013 \cite*{LearningRevisedModels})
     \item Technique: This approach optimizes the adaptation rules and domain models.
     \item Purpose: The optimizations aim to generate new and better adaptation rules and domain models.
     \item Approach: The optimizations are performed by an internal component that sits between the domain model
-    and the Self-Adaptive System.
+    and the \acrshort{sas}.
     \item Reflective Adaptation Control: This approach generates new adaptation rules.
 \end{itemize}
 
 \subparagraph*{FIoT}
 by Moraes do Nascimento and Pereira, 2016 \cite*{FIoT} is a framework for using agent-based systems
-to construct self-organizing systems for the Internet of Things.
+to construct self-organizing systems for the Internet of Things (IoT).
+For this they use three different types of agents: God, Observer and Adaptive agents.
+The God agents are responsible for establishing connections to IoT devices.
+The adaptive agent represent the \acrlong{sas}.
+The observer agents observe the adaptations that are made by the adaptive agents
+and change their behavior.
 \begin{itemize}[nosep]
     \item Location: FIoT optimizes three different levels: The physical, communication and application layer.
     \item Time: FIoT performs its optimizations during the run time of the system.
-    \item Technique: FIoT changes the Level, Adaptation Technique and Rules / Policies of a Self-Adaptive System.
-    \item Purpose: Generate self-organizing behavior in a Self-Adaptive System.
+    \item Technique: FIoT changes the Level, Adaptation Technique and Rules / Policies of a \acrshort{sas}.
+    \item Purpose: Generate self-organizing behavior in a \acrshort{sas}.
     \item Approach: FIoT uses a decentralized agent-based approach.
-    \item Reflective Adaptation Control: % TODO:
+    \item Reflective Adaptation Control: The observer agents change the behavior of the adaptive agents.
+    This is equivalent to modifying rules or policies.
 \end{itemize}
