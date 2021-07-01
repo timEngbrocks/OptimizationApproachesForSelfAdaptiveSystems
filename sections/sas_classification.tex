@@ -2,7 +2,7 @@
 \label{ch:SASClassification}
 
 There are different approaches on how to classify and describe \acrlong{sas}[s] which all focus on different usages.
-The three approaches that will be highlighted by this paper are:
+The three approaches that will be highlighted by this section are:
 \begin{itemize}[nosep]
     \item FORMS from Weyns et al., 2012 \cite*{FORMS}
     \item Berns and Ghosh, 2009 definition of self-* properties \cite*{DissectingSelfProperties}
@@ -22,11 +22,31 @@ Optimization Approaches for \acrlong{sas}[s] in the next chapter.
 \noindent In their 2012 paper FORMS \cite{FORMS} Weyns et al. propose a formal reference model for describing \acrlong{sas}[s].
 The goal of FORMS is to provide a well defined basis for talking and reasoning about \acrlong{sas}[s].
 This is achieved by providing a definition of FORMS which classifies \acrlong{sas}[s] using Z notation.
-By composing a Self-Adaptive System from different levels of components called subsystems,
-where each level can adapt the level beneath, FORMS models the self-adaptive process using reflection.
-The bottom level is populated by base components and domain models.
-On top of these base components are reflective components and reflection models.
-The relation between these component or primitives is depicted in Figure \ref{fig:FORMS}.
+Z notation is used for formal specifications and is based upon Zermelo-Fraenkel set theory.
+It is mathematically well-defined and often used to describe software systems.
+
+FORMS describes \acrshort{sas} by dividing them into components which are arranged over different layers.
+The bottom most layer is called the base layers.
+This layer contains domain models and base components.
+These are directly responsible for interacting with the systems environment.
+On the layers above the base layer are reflective layers with reflective components.
+These components can adapt components in the layer beneath them.
+Reflection refers to the ability of a system to examine and modify itself.
+
+This approach can be understood with the example of a robot that uses motorized wheels
+and some sensors to observe its environment.
+The motor control software used by the robot would be placed in the base layers.
+The sensors would be placed in the base layer as well.
+These components are responsible for observing the environment and interacting with it.
+On top of the base layer the robot might use a reflective layer which changes how the wheels are operated
+based on the current weather conditions that it observes.
+The top layer of the robots software could be an automatic updater 
+which automatically updates the robots software to the latest version.
+For this, the updater has to examine the robots software and modify it.
+In other words, the updater is a reflective component.
+
+Another example for composing \acrlong{sas}[s] from base and reflective components and layers
+from the original paper by Weyns et al. is depicted in Figure \ref{fig:FORMS}.
 
 \noindent The concept of different layers of reflection will be useful later to distinguish
 Optimization Approaches for \acrlong{sas}[s] from \acrlong{sas}[s].
@@ -41,16 +61,17 @@ Optimization Approaches for \acrlong{sas}[s] from \acrlong{sas}[s].
 "The Vision of Autonomic Computing" by Kephart and Chess \cite*{VisionOfAutonomicComputing} focused on self-adaptation,
 there are other aspects of software systems that can benefit from the ideas introduced by \acrlong{sas}[s].
 Berns and Ghosh, 2009 \cite*{DissectingSelfProperties} identified and described such aspects which they call self-* properties.
-These self-properties can be seen in Figure \ref{fig:SelfProperties}.
+These self-* properties can be seen in Figure \ref{fig:SelfProperties}.
 They are useful to:
 \begin{itemize}[nosep]
     \item Communicate the abilities and goals of a system.
     \item Establish well-defined goals for the system.
 \end{itemize}
 
+
+
 \noindent These self-* properties show that there are aspects besides the management of software which can benefit from the ideas of Self-Adaptation.
 This will be useful for the proposed classification as it gives a clear setting for the Optimization Approaches to work within.
-% TODO: OA for SAS should only focus on Self-Adaptation, other abilities should be ignored.
 
 \begin{figure*}[t!]
     \includegraphics[width=\textwidth]{images/KrupitzerTaxonomy.jpg}
@@ -82,11 +103,16 @@ While the original When-Question by Salehie and Tahvildari tries to understand a
 including how frequently changes should occur and if they happen continously,
 the taxonomy only answers the question when changes should be performed.
 For this purpose the Time dimension differentiates between systems that perform changes proactively or reactively.
+Reactive changes occur after, for example, a system metric has been violated.
+Proactive changes occur before a system metric can be violated.
 
 \subparagraph*{What}
 In addition to the question of where and when changes should occur, it is also important to know
 what changes should occur. There are different techniques that can be used.
 The Technique dimension of the taxonomy differentiates between systems that change parameters, their structure or their context.
+A system that changes its structure could, for example, be a datacenter, which starts new server instances on demand.
+Robots are an example for systems that change their context.
+This is achieved by, for example, moving the robot around.
 
 \subparagraph*{Who}
 After answering where, when, what and why changes should be performed, 
@@ -97,11 +123,23 @@ The taxonomy does not directly address all of these concerns but states that:
 "N/A (nature of a SAS leads to an automatic type of adaptation)" (Krupitzer et al., 2015 \cite{SurveyOnEngineeringApproaches}).
 
 \subparagraph*{How}
-Lastly, after determining the where, when, what, why and by who, there needs to be a way
+Lastly, after determining the where, when, what, why and who, there needs to be a way
 to perform the required changes. This is answered by asking how the changes should be performed
 and corresponds to the Adaptation Control.
-The three main factors of the Adaptation Control are the degree of decentralization, the adaptation decision criteria
-and the approach taken by the system, which divides \acrlong{sas}[s] into those where the adaptation logic is part of the application logic
+The three main aspects of the Adaptation Control are the degree of decentralization, the adaptation decision criteria
+and the approach taken by the system.
+The degree of decentralization ranges from systems which perform adaptations through a central component (fully centralized)
+to systems where each component is responsible for its own adaptation (fully decentralized).
+In between these two degrees are systems that employ a hybrid approach.
+The adaptation decision criteria controls how the adaptation is achieved.
+Krupitzer et al. propose the following possibilities:
+\begin{itemize}[nosep]
+    \item Models: The \acrshort{sas} updates e.g. domain models which results in behavioral changes.
+    \item Rules/Policies: The \acrshort{sas} changes its behavior based on rules or policies.
+    \item Goals: The \acrshort{sas} changes its behavior to meet some predefined set of goals.
+    \item Utility: The \acrshort{sas} changes its behavior to maximize or minimize a utility function.
+\end{itemize}
+The approach divides \acrlong{sas}[s] into those where the adaptation logic is part of the application logic
 and those with separated adaptation and application logic.
 
 \noindent After classifying \acrlong{sas}[s] the following question can be asked: Which parts of a Self-Adaptive System can be optimized?
@@ -110,7 +148,7 @@ To answer this we will start by looking at which parts can not be optimized or d
 \noindent The first part that can not be optimized is the environment which provides the Reason dimension.
 While the environment for a Self-Adaptive System can be chosen in a way which is most beneficial for the system
 and can be influenced by actors,
-the behavior of the systems environment can generally not be controlled completely.
+the behavior of the systems environment can generally not be controlled.
 
 \noindent Another dimension of \acrlong{sas}[s] that can not be optimized, or is not useful to optimize,
 is the Time dimension. This dimension is mostly a design decision on how the system should behave and be constructed.
@@ -142,9 +180,9 @@ adaptations should be performed.
 leads us to how we can classify Optimization Approaches for \acrlong{sas}[s].
 The main concepts that will be used for the classification of Optimization Approaches are:
 \begin{itemize}[nosep]
-    \item The concept of reflectiveness as a way to model self-adaptation.
+    \item The concept of using reflectiveness to describe \acrshort{sas}.
     \item The 5W+1H questions to determine how a Self-Adaptive System operates.
-    \item The MAPE-K feedback loop a general base for understanding \acrlong{sas}[s].
+    \item The \acrshort{mapek} feedback loop as a general base for understanding \acrlong{sas}[s].
     \item The concept of self-* properties which enables us to differentiate between self-adaptation
     and other self-* abilities.
     \item A taxonomy for \acrlong{sas}[s] which will be the basis for the proposed classification of Optimization Approaches,

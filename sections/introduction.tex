@@ -27,7 +27,6 @@ that the developers of such complex systems face, it becomes uneconomical to pur
 
 \noindent From this the need for software systems which can autonomously manage themselves arises.
 In order to achieve this task of autonomous self-management, the system has to be able to:
-% MAPE-K -> Monitor, Analyze, Plan, Execute with Knowledge
 \begin{itemize}[nosep]
     \item detect faults and changes in its environment,
     \item analyze them,
@@ -44,14 +43,6 @@ If the analyzing step detects, that an adaptation is necessary,
 the system has to \textit{plan} how to perform the necessary changes.
 After the changes have been planned, they need to be \textit{executed}.
 All of this happens with \textit{knowledge} of the environment and the system.
-% \begin{itemize}[nosep]
-%     \item[\textbf{Monitor}] First the system has to \textit{monitor} itself and its environment.
-%     \item[\textbf{Analyze}] The data, gathered by the monitoring step, has to be \textit{analyzed} to detect changes and faults.
-%     \item[\textbf{Plan}] If the analyzing step detects, that an adaptation is necessary,
-%     the system has to \textit{plan} how to perform the necessary changes.
-%     \item[\textbf{Execute}] After the changes have been planned, they need to be \textit{executed}.
-%     \item[\textbf{Knowledge}] All of this happens with \textit{knowledge} of the environment and the system.
-% \end{itemize}
 
 \noindent Software systems that can autonomously manage themselves are called \acrfull{sas}[s]
 because of their ability to adapt themselves.
@@ -59,18 +50,18 @@ because of their ability to adapt themselves.
 \noindent To better understand \acrlong{sas}[s], let us take a look at a commonly used example.
 Imaging you are the system administrator of a large scale online store.
 This store has four parameters: site traffic, number of purchases, number of active server instances and the number of served advertisements.
-During your day to day operations you encounter two common tasks:
-\begin{enumerate}[nosep]
-    \item Changing the number of active server instances based on the site traffic.
-    \item Updating the number of served advertisements based on the number of purchases.
-\end{enumerate}
-To make your job easier, you decide to use a \acrlong{sas} for these tasks and come up with the following adaptation rules:
-\begin{enumerate}[nosep]
-    \item If the site traffic goes above a certain threshold: Start a new server instance.
-    \item If the site traffic goes below a certain threshold: Shut down the least used server instance.
-    \item When the number of purchases decreases: Increase the number of advertisements that are being served on the website.
-\end{enumerate}
-% TODO: finish -> minimal benefit, increase with #params and #tasks
+During your day to day operations you encounter a common type of task:
+Update some system parameter X based on some metric Y.
+To make your job easier, you decide to use a \acrlong{sas} for these tasks
+and come up with the following generalized adaptation rule:
+If metric Y crosses threshold Z, update the system parameter X.
+
+\noindent In this case the usage of a \acrshort{sas} was beneficial because it could easily
+automate a general set of tasks.
+A human operator might have been able to perform these tasks on his own,
+if the number of system parameters was sufficiently small.
+But the \acrshort{sas} is better at handling large numbers of system parameters.
+
 
 \noindent While \acrlong{sas}[s] are better at handling more complex systems,
 human operators are better at handling uncertainty.
@@ -81,21 +72,23 @@ Over time this leads to an increasing divergence between the expected results of
 when the environment changes in ways that were not predicted by developers during the design time of the system.
 
 \noindent This can be illustrated by the previous example.
-Imagine that the \acrlong{sas} has been in operation for some time and you collected data on the systems performance.
-You notice that the number of start/shut down operations per server instance has increased 
-which has led to an increased electricity bill.
-After further analyzing the data you discover that the site traffic often fluctuates around the threshold that you set.
-Each time that the site traffic crossed this threshold a new server instance was started or the least used instance was stopped.
-As a human operator you would have waited on how the site traffic develops before starting or shutting down server instances.
-The \acrshort{sas} could not handle this type of uncertainty and only reacted to the current state of its environment.
+Imagine that the \acrlong{sas} has been in operation for some and you collected data on the systems performance.
+You notice that the \acrshort{sas} changes some system parameters too aggressively,
+because it performs an adaptation as soon as a metrics threshold has been violated.
+As a human operator you would have waited some time to see how the metric develops before performing an adaptation
+which would result in a smoother operation.
+The \acrshort{sas} can not handle this type of uncertainty and only reacted to the current state of its environment.
 
-\noindent Optimizations are necessary to increase the performance and effectiveness of \acrlong{sas}[s].
+\noindent Optimizations are necessary to improve the performance and effectiveness of \acrlong{sas}[s] in situations like these.
 There are already many approaches on how to optimize \acrshort{sas}.
 Some of them focus on updating adaptation rules and policies during the systems runtime.
 Others dynamically change at which level of the system adaptations are performed.
+Generally most optimizations target static components of \acrshort{sas}.
+These components can be improved by making them more dynamic, 
+which is often achieved by applying modern learning methods.
 
 \noindent The previous example could benefit from such optimizations by dynamically updating adaptation rules
-during times of the day which have historically seen large fluctuations around the thresholds that were set.
+to better reflect the systems changing environment.
 
 \noindent While there are already many \acrfull{oa}[es] for \acrshort{sas},
 there is no classification for them.
