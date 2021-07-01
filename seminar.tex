@@ -47,6 +47,12 @@
 % me-ta-mo-del
 }
 
+%% ----------------------------
+%% | Acronyms                 |
+%% ----------------------------
+\usepackage[acronym]{glossaries}
+\loadglsentries[type=\acronymtype]{sections/glossary.tex}
+
 %% --------------------------------
 %% | Bibliography                 |
 %% --------------------------------
@@ -73,21 +79,23 @@
 %% ----------------
 %% |   Abstract   |
 %% ----------------
- 
-%% The text is included from the following files:
-%% - sections/abstract
 
-% NOTE: Planned pages -> minimum of 15 content pages
-% Chapter           Planned Current Missing
-% Introduction:     2       2       0
-% Classification:   5       4       1
-% Proposal:         5       4.5     0.5
-% Existing:         2       0.5     1.5
-% Conclusion:       1       0       1
-% Total:            15      8.5     4
+% Peer Review TODO:
+% - Introduction
+%   - Define terms
+%   - Explain basic concepts better
+% - Provide real world example for better understandability
+% - Better explain FORMS
+%   - Z notation
+%   - What does reflective mean in this context
+% - Mapping OA and MAPE-K redundant
+% - Use short hand for \acrlong{sas}[s]: SAS
+% - Groß-/Kleinschreibung von gewissen Begriffen
+% - Existing FIoT: RAC fehlt noch
+% - Komma Anmerkungen aus Peer Review #2
+% - Bei Exisiting müssen die Approaches noch verglichen werden
 
 % CURRENT TODO:
-% - Abstract fehlt noch
 % - Was trägt self-* zum Proposal bei?
 % 	- Evtl Paper nochmal lesen
 % - klarer machen das der 5w+1h teil in classification nicht von mir stammt
@@ -97,11 +105,7 @@
 % 	- klarstellung dass es ein proposal ist
 % - Erklärung dimensions: Text bei Approach
 % - Maybe short summary sentence am ende von proposal vor den tables
-	
 % . ML usage paper: Bezug auf die dort proposed classification?
-
-% - Introduction ist gut
-
 \input{sections/abstract.tex}
 \input{sections/introduction.tex}
 \input{sections/sas_classification.tex}

@@ -1,11 +1,10 @@
-\newpage
 \section{Introduction}
 \label{ch:Introduction}
 
 % \paragraph*{Literature for this section:} \begin{itemize}
 %     \item "An Introduction to Self-adaptive Systems: A Contemporary Software Engineering Perspective" \cite{SasIntroduction}
-%     \item "Software Engineering for Self-Adaptive Systems: A Research Roadmap" \cite{ResearchRoadmap}
-%     \item "Software Engineering for Self-Adaptive Systems: A Second Research Roadmap" \cite{SecondResearchRoadmap}
+%     \item "Software Engineering for \acrlong{sas}[s]: A Research Roadmap" \cite{ResearchRoadmap}
+%     \item "Software Engineering for \acrlong{sas}[s]: A Second Research Roadmap" \cite{SecondResearchRoadmap}
 %     \item "Claims and supporting evidence for self-adaptive systems: A literature study" \cite{ClaimsAndSupportingEvidence}
 %     \item "Self-Adaptive Software: Landscape and Research Challenges" \cite{LandscapeAndResearchChallenges}
 % \end{itemize}
@@ -13,81 +12,101 @@
 \begin{figure*}[hbt!]
     \centering
     \includegraphics[width=0.6\textwidth]{images/MAPEK.png}
-    \caption{The MAPE-K (Monitor-Analyze-Plan-Execute with Knowledge) feedback loop by Kephart and Chess, 2003 \cite*{VisionOfAutonomicComputing}}
+    \caption{The \acrshort{mapek} (Monitor-Analyze-Plan-Execute with Knowledge) feedback loop by Kephart and Chess, 2003 \cite*{VisionOfAutonomicComputing}}
     \label{fig:MAPEK}
 \end{figure*}
 
-% TODO: What are Self-Adaptive Systems?}
-% TODO: Why are Self-Adaptive Systems useful?}
 The complexity of modern software systems is constantly growing.
 Most of this growth in complexity stems from the
-"need to integrate several heterogeneous environments into corporate-wide computing systems, 
+"need to integrate several heterogeneous environments into corporate-wide computing systems,
 and to extend that beyond company boundaries into the Internet" (Kephart and Chess, 2003 \cite*{VisionOfAutonomicComputing}).
-This has reached a state where the 
+This has reached a state where the
 "complexity appears to be approaching the limits of human capability" (Kephart and Chess, 2003 \cite*{VisionOfAutonomicComputing}).
 In combination with the uncertainty about a software systems future operations and environment,
 that the developers of such complex systems face, it becomes uneconomical to purely operate such a system by human operators.
-\newline
-\par
 
-
-From this the need for software systems which can autonomously manage themselves arises.
+\noindent From this the need for software systems which can autonomously manage themselves arises.
 In order to achieve this task of autonomous self-management, the system has to be able to:
 % MAPE-K -> Monitor, Analyze, Plan, Execute with Knowledge
-\begin{itemize}
-    \item detect faults and changes in its environment.
-    \item decide how to react to faults and changes in the systems environment.
-    \item make changes to itself.
+\begin{itemize}[nosep]
+    \item detect faults and changes in its environment,
+    \item analyze them,
+    \item decide how to react to them
+    \item and make changes to itself.
 \end{itemize}
 
-To model these abilities Kephart and Chess developed
-the MAPE-K (Monitor-Analyze-Plan-Execute with Knowledge) feedback loop \cite*{VisionOfAutonomicComputing} shown in Figure \ref{fig:MAPEK}.
-\paragraph*{Monitor} First the system has to monitor itself and its environment. 
-\paragraph*{Analyze} The data, gathered by the monitoring step, has to be analyzed to detect changes and faults.
-\paragraph*{Plan} If the analyzing step detects, that an adaptation is necessary, 
-the planning step plans which changes have to be made.
-\paragraph*{Execute} After the changes have been planned, they need to be executed.
-\paragraph*{Knowledge} All of this happens with Knowledge of the environment and the system.
-\newline
-\par
+\noindent To model these abilities Kephart and Chess developed
+the \acrfull{mapek} feedback loop \cite*{VisionOfAutonomicComputing} shown in Figure \ref{fig:MAPEK}.
 
-
-Software systems that can autonomously manage themselves are called Self-Adaptive Systems
-because of their ability to adapt themselves.
-\newline
-\par
-
-
-% This approach to managing software systems has advantages compared to the use of human operators:
-% \begin{itemize}% TODO: list advantages.
-%     \item 
+\noindent First the system has to \textit{monitor} itself and its environment.
+The data, gathered by the monitoring step, has to be \textit{analyzed} to detect changes and faults.
+If the analyzing step detects, that an adaptation is necessary,
+the system has to \textit{plan} how to perform the necessary changes.
+After the changes have been planned, they need to be \textit{executed}.
+All of this happens with \textit{knowledge} of the environment and the system.
+% \begin{itemize}[nosep]
+%     \item[\textbf{Monitor}] First the system has to \textit{monitor} itself and its environment.
+%     \item[\textbf{Analyze}] The data, gathered by the monitoring step, has to be \textit{analyzed} to detect changes and faults.
+%     \item[\textbf{Plan}] If the analyzing step detects, that an adaptation is necessary,
+%     the system has to \textit{plan} how to perform the necessary changes.
+%     \item[\textbf{Execute}] After the changes have been planned, they need to be \textit{executed}.
+%     \item[\textbf{Knowledge}] All of this happens with \textit{knowledge} of the environment and the system.
 % \end{itemize}
 
-While Self-Adaptive Systems are better at handling more complex systems,
+\noindent Software systems that can autonomously manage themselves are called \acrfull{sas}[s]
+because of their ability to adapt themselves.
+
+\noindent To better understand \acrlong{sas}[s], let us take a look at a commonly used example.
+Imaging you are the system administrator of a large scale online store.
+This store has four parameters: site traffic, number of purchases, number of active server instances and the number of served advertisements.
+During your day to day operations you encounter two common tasks:
+\begin{enumerate}[nosep]
+    \item Changing the number of active server instances based on the site traffic.
+    \item Updating the number of served advertisements based on the number of purchases.
+\end{enumerate}
+To make your job easier, you decide to use a \acrlong{sas} for these tasks and come up with the following adaptation rules:
+\begin{enumerate}[nosep]
+    \item If the site traffic goes above a certain threshold: Start a new server instance.
+    \item If the site traffic goes below a certain threshold: Shut down the least used server instance.
+    \item When the number of purchases decreases: Increase the number of advertisements that are being served on the website.
+\end{enumerate}
+% TODO: finish -> minimal benefit, increase with #params and #tasks
+
+\noindent While \acrlong{sas}[s] are better at handling more complex systems,
 human operators are better at handling uncertainty.
-Because the rules and policies, used by Self-Adaptive Systems,
-are statically created at the design time of the system, a Self-Adaptive System can adapt its underlying system to a changing environment,
-but it can not adapt its own adaptation process.
-This leads to an increasing divergence between the expected results of adaptations and the actual results,
+This has two reasons. 
+Firstly, the adaptation rules and policies used by \acrshort{sas} are statically created at design time.
+Secondly, \acrshort{sas} can adapt the software that they are managing but they can not change their adaptation process.
+Over time this leads to an increasing divergence between the expected results of adaptations and the actual results,
 when the environment changes in ways that were not predicted by developers during the design time of the system.
-\newline
-\par
 
+\noindent This can be illustrated by the previous example.
+Imagine that the \acrlong{sas} has been in operation for some time and you collected data on the systems performance.
+You notice that the number of start/shut down operations per server instance has increased 
+which has led to an increased electricity bill.
+After further analyzing the data you discover that the site traffic often fluctuates around the threshold that you set.
+Each time that the site traffic crossed this threshold a new server instance was started or the least used instance was stopped.
+As a human operator you would have waited on how the site traffic develops before starting or shutting down server instances.
+The \acrshort{sas} could not handle this type of uncertainty and only reacted to the current state of its environment.
 
-From this the need for optimizations for Self-Adaptive Systems arises.
-While there already are many Optimization Approaches for Self-Adaptive Systems,
+\noindent Optimizations are necessary to increase the performance and effectiveness of \acrlong{sas}[s].
+There are already many approaches on how to optimize \acrshort{sas}.
+Some of them focus on updating adaptation rules and policies during the systems runtime.
+Others dynamically change at which level of the system adaptations are performed.
+
+\noindent The previous example could benefit from such optimizations by dynamically updating adaptation rules
+during times of the day which have historically seen large fluctuations around the thresholds that were set.
+
+\noindent While there are already many \acrfull{oa}[es] for \acrshort{sas},
 there is no classification for them.
-Because of this, the existing Optimization Approaches can not be easily compared
-and it is difficult to identify areas that require further research.
-This paper aims to provide such a classification for Optimization Approaches for Self-Adaptive Systems.
-\newline
-\par
+Because of this, the existing \acrshort{oa} can not be easily compared
+and it is difficult to identify areas which require further research.
+This paper aims to provide such a classification for \acrlong{oa}[es] for \acrlong{sas}[s].
 
-
-To derive a classification for Optimization Approaches for Self-Adaptive Systems,
-the second chapter will first explain how Self-Adaptive Systems are classified
+\noindent To derive a classification for \acrlong{oa}[es] for \acrlong{sas}[s],
+chapter \ref{ch:SASClassification} will first explain how \acrshort{sas} are classified
 using three different approaches.
-Based on these approaches, a classification for Optimization Approaches for Self-Adaptive Systems will be derived
-and proposed in the third chapter.
-The fourth chapter applies the classification to some existing Optimization Approaches
-and compares them using the proposed classification.
+Based on these approaches, a classification for \acrshort{oa} for \acrshort{sas} will be derived
+and proposed in chapter \ref{ch:Proposal}.
+In chapter \ref{ch:Existing} the proposed classification will be applied to some existing \acrshort{oa}.
+Lastly, chapter \ref{ch:Conclusion} will finish with a conclusion and recommendations for future research directions.
