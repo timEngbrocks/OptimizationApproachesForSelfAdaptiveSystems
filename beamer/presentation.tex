@@ -1,5 +1,5 @@
 %% Beispiel-Präsentation
-\documentclass[en,16:9]{sdqbeamer} 
+\documentclass[de,16:9]{sdqbeamer} 
  
 %% Titelbild
 \titleimage{banner_2020_kit}
@@ -13,14 +13,14 @@
 
 % Beginn der Präsentation
 
-\title[Optimization Approaches for Self-Adaptive Systems]{Optimization Approaches for Self-Adaptive Systems}
+\title[Optimierungsansätze für Adaptionsstrategien in SAS]{Optimierungsansätze für Adaptionsstrategien in SAS}
 \author[Tim Engbrocks]{Tim Engbrocks}
 
-\date[01.\,07.\,2021]{July 01, 2021}
+\date[21.\,07.\,2021]{21.\,07.\,2021}
 
 % Literatur 
  
-\usepackage[citestyle=authoryear,bibstyle=numeric,hyperref,backend=biber]{biblatex}
+\usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
 \addbibresource{presentation.bib}
 \bibhang1em
 
@@ -30,35 +30,38 @@
 \KITtitleframe
 
 %Inhaltsverzeichnis
-\begin{frame}{Table of contents}
+\begin{frame}{Inhaltsverzeichnis}
 \tableofcontents
 \end{frame}
 
-\section{Introduction}
+\section{Einführung}
 
-\begin{frame}{"The looming software crisis" - IBM, 2001}
-	The complexity of software is constantly increasing.
+\begin{frame}{Die Komplexität von Software}
+	\begin{center}
+		Die Komplexität von Software steigt stetig. \\
+		\glqq The looming software crisis \grqq - IBM, 2001
+	\end{center}
 	\medskip
 	\begin{itemize}
-		\item Modern language models: 
+		\item Moderne Sprachmodelle: 
 		\begin{itemize}
-			\item GPT-3 by OpenAI: 175 billion parameters \cite*{GPT3}
-			\item Turing-NLG by Microsoft: 17 billion parameters \cite*{TuringNLG}
+			\item GPT-3 von OpenAI: 175 Milliarden Parameter \cite{GPT3}
+			\item Turing-NLG von Microsoft: 17 Milliarden Parameter \cite{TuringNLG}
 		\end{itemize}
-		\item Tesla Autopilot AI predicts 10,000 parameters \cite*{TeslaAutopilot}
+		\item Teslas Autopilot AI sagt 10.000 Parameter vorraus \cite{TeslaAutopilot}
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Netflix Microservice Architecture}
+\begin{frame}{Netflix Microservice Architektur}
 	\begin{columns}
 		\column{.7\textwidth} \begin{center}
-			\includegraphics[width=\textwidth]{sources/Mastering Chaos.pdf}
+			\includegraphics[width=0.9\textwidth]{sources/Mastering Chaos.pdf}
 		\end{center}
-		\column{.3\textwidth} Josh Evans, CTO @ Netflix, QCon 2016 \cite*{JoshQCon}
+		\column{.3\textwidth} Josh Evans, CTO @ Netflix, QCon 2016 \cite{JoshQCon}
 	\end{columns}
 \end{frame}
 
-\begin{frame}{The Solution: Autonomous Management}
+\begin{frame}{Die Lösung: Autonomes Management}
 	\begin{columns}
 		\column{.7\textwidth} \begin{center}
 			\includegraphics[height=0.7\textheight]{sources/MAPEK.png}
@@ -67,35 +70,35 @@
 	\end{columns}
 \end{frame}
 
-\section{Self-Adaptive Systems}
+\section{Selbstadaptive Systeme}
 
 \begin{frame}{Definition}
-	\begin{greenblock}{Self-Adaptive System}
-		A system which autonomously manages its self by:
+	\begin{greenblock}{Selbstadaptives System}
+		Ein System, das sich autonom steuert durch das:
 		\begin{itemize}
-			\item \textit{Monitoring} its environment,
-			\item \textit{analyzing} changes
-			\item \textit{planning} adaptations and
-			\item \textit{executing} adaptations
+			\item \textit{Beobachten} des Kontextes
+			\item \textit{Analysieren} von Veränderungen
+			\item \textit{Planen} von Anpassungen
+			\item \textit{Ausführen} von Anpassungen
 		\end{itemize}
 	\end{greenblock}
 \end{frame}
 
-\begin{frame}{Example: Online store}
+\begin{frame}{Beispiel: kommerzielles Web Angebot}
 	\begin{itemize}
-		\item Scenario: System administrator of a commercial web service.
-		\item Common task: Update system parameter X based on metric Y.
+		\item Szenario: System Administrator eines kommerziellen Web Angebots.
+		\item Tägliche Aufgabe: System Paramter X basierend auf Metrik Y anpassen.
 	\end{itemize}
 	\medskip
-	This can scenario can benefit from a Self-Adaptive System:
+	Dieses Szenario kann von einem Selbstadaptiven System profitieren:
 	\begin{itemize}
-		\item Generalized adaptation rule:
-		If metric Y crosses threshold Z: Update system parameter X.
-		\item Example: If the server load gets too high: Start a new server instance.
+		\item Generelle Anpassungs Regel:
+		Wenn die Metrik Y den Schwellwert Z übersteigt: Passe den System Parameter X an
+		\item Beispiel: Wenn die Serverlast zu hoch wird: Starte einen zusätzlichen Server
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Classifying Self-Adaptive Systems}
+\begin{frame}{Selbstadaptive Systeme klassifizieren}
 	\begin{columns}
 		\column{.7\textwidth} \begin{center}
 			\includegraphics[width=\textwidth]{sources/KrupitzerTaxonomy.jpg}
@@ -104,138 +107,143 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Limitations of Self-Adaptive Systems}
+\begin{frame}{Grenzen von Selbstadaptiven Systemen}
 	\begin{center}
-		\Large \textbf{Uncertainty}
+		\Large \textbf{Unsicherheit}
 		\\ \medskip
-		Environment changes $\Rightarrow$ Unexpected adaptation results
+		Änderungen im Kontext $\Rightarrow$ Unerwartete Ergebnisse von Anpassungen
 	\end{center}
 \end{frame}
 
-\section{Optimization Approaches}
+\section{Optimierungsansätze}
 
-\begin{frame}{Optimizations for Self-Adaptive Systems}
-	There is one main approach for optimizing Self-Adaptive Systems
-	that is being used:
+\begin{frame}{Optimierungen für Selbstadaptive Systeme}
+	Der meist verwendete Optimierungsansatz:
 	\begin{itemize}
-		\item Dynamically update adaptation rules.
+		\item Dynamisch Adaptations Regeln anpassen
 	\end{itemize}
 	\medskip
-	In most cases machine learning is used to generate new adaptation rules
-	or to update them. \\
+	Viele Ansätze verwenden maschinelles lernen, um neue Regeln zu generieren
+	oder bestehende anzupassen. \\
 	\medskip
-	But other aspects can be optimized as well:
+	Andere Aspekte des Systems können auch optimiert werden:
 	\begin{itemize}
-		\item Adaptation Control: How
-		\item Level: Where
-		\item Technique: What
+		\item Adaptations Steuerung: Wie
+		\item Ebene: Wo
+		\item Methode: Was
 	\end{itemize}
 \end{frame}
 
-\section{Classification Proposal}
+\section{Klassifizierung}
 
-\begin{frame}{Developing a classification}
-	The classification is based on three concepts:
+\begin{frame}{Eine Klassifizierung entwicklen}
+	Die Klassifizierung basiert auf drei Konzepten:
 	\begin{itemize}
-		\item Reflective computation (\cite{FORMS})
-		\item The 5W+1H questions (\cite{LandscapeAndResearchChallenges})
+		\item Reflektive Systeme \cite{FORMS}
+		\item Die 6W Fragen \cite{LandscapeAndResearchChallenges}
 		\begin{itemize}
-			\item Who, What, Where, When, Why and How
+			\item Wieso, Wo, Wann, Was, Wer und Wie
 		\end{itemize}
-		\item The taxonomy for Self-Adaptive Systems (\cite{SurveyOnEngineeringApproaches})
+		\item Die Klassifizierung von Selbstadaptiven Systemen \cite{SurveyOnEngineeringApproaches}
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Classification proposal}
+\begin{frame}{Vorschlag einer Klassifizierung}
 	\begin{center}
 		\includegraphics[width=.5\textwidth]{sources/ClassificationProposal-Proposal.png}
 	\end{center}
 \end{frame}
 
-\begin{frame}{Classification proposal - Location}
-	\begin{greenblock}{Location}
+\begin{frame}{Klassifizierung - Ort}
+	\begin{greenblock}{Ort}
 		\begin{itemize}
-			\item Adaptation Control
-			\item Level
-			\item Technique
+			\item Adaptations Steuerung
+			\item Ebene
+			\item Methode
 		\end{itemize}
 	\end{greenblock}
 \end{frame}
 
-\begin{frame}{Classification proposal - Time}
-	\begin{greenblock}{Time}
+\begin{frame}{Klassifizierung - Zeit}
+	\begin{greenblock}{Zeit}
 		\begin{itemize}
-			\item Design time
-			\item Run time / Online phase
-			\item Offline phase
+			\item Entwurfsphase
+			\item Laufzeit / Online Phase
+			\item Offline Phase
 		\end{itemize}
 	\end{greenblock}
 \end{frame}
 
-\begin{frame}{Classification proposal - Technique}
-	\begin{greenblock}{Technique}
+\begin{frame}{Klassifizierung - Methode}
+	\begin{greenblock}{Methode}
 		\begin{itemize}
-			\item Rules / Policies
-			\item Knowledge
-			\item Adaptation Technique
-			\item Level
+			\item Adaptations Regeln
+			\item Wissen
+			\item Adaptations Methode
+			\item Ebene
 		\end{itemize}
 	\end{greenblock}
 \end{frame}
 
-\begin{frame}{Classification proposal - Purpose}
-	\begin{greenblock}{Purpose}
+\begin{frame}{Klassifizierung - Zweck}
+	\begin{greenblock}{Zweck}
 		\begin{itemize}
-			\item Update Knowledge
-			\item Apply Rules / Policies
-			\item Goal Satisfaction
-			\item Utility max-/minimization
+			\item Vorhandenes Wissen anpassen
+			\item Adaptations Regeln an die neue Umgebung anpassen
+			\item Ein Ziel erfüllen
+			\item Eine Nutzenfunktion maximieren/minimieren
 		\end{itemize}
 	\end{greenblock}
 \end{frame}
 
-\begin{frame}{Classification proposal - Approach}
-	\begin{greenblock}{Approach}
+\begin{frame}{Klassifizierung - Ansatz}
+	\begin{greenblock}{Ansatz}
 		\begin{itemize}
-			\item Internal / External
-			\item Degree of decentralization:
+			\item Intern / Extern
+			\item Grad der Dezentralisierung:
 			\begin{itemize}
-				\item Fully centralized
-				\item Fully decentralized
-				\item Hybrid
+				\item Komplett zentral
+				\item Komplett dezentral
+				\item Sowohl zentral als auch dezentral
 			\end{itemize}
 		\end{itemize}
 	\end{greenblock}
 \end{frame}
 
-\begin{frame}{Classification proposal - Reflective Adaptation Control}
-	\begin{greenblock}{Reflective Adaptation Control}
+\begin{frame}{Klassifizierung - Reflektive Anpassungs Steuerung}
+	\begin{greenblock}{Reflektive Anpassungs Steuerung}
 		\begin{itemize}
-			\item Update Models
-			\item Modify Rules / Policies
-			\item Satisfy Goals
-			\item Max-/Minimize Utilities
+			\item Modelle anpassen
+			\item Adaptations Regeln anpassen
+			\item Ziele erfüllen
+			\item Nutzenfunktionen maximieren/minimieren
 		\end{itemize}
 	\end{greenblock}
 \end{frame}
 
-\begin{frame}{Classification proposal}
+\begin{frame}{Vorschlag einer Klassifizierung}
 	\begin{center}
 		\includegraphics[width=.6\textwidth]{sources/ClassificationProposal-WithDimensions.png}
 	\end{center}
 \end{frame}
 
-\section{Conclusion}
+\section{Fazit}
 
-\begin{frame}{Conclusion}
-	This field still requires further research:
+\begin{frame}{Schlussfolgerungen}
+	Nur wenige Optimierungsansätze verwenden:
 	\begin{itemize}
-		\item The proposed classification has to be applied to existing approaches.
-		This could verify the classification and give a structured overview of the field.
-		\item Different approaches need to be tested.
-		For example: Optimization Approaches which focus on the Level or Technique.
-		\item Most approaches that are currently used are highly domain specific.
-		This applies to Self-Adaptive Systems and their Optimization Approaches.
+		\item Zeit: Entwurfsphase und Offline Phase
+		\item Ort: Ebene und Technik
+		\item Ansatz: Dezentral
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Weitere Forschung}
+	Folgende Bereiche benötigen weitere Forschung:
+	\begin{itemize}
+		\item Die vorherigen Dimensionen erforschen
+		\item Eine Methode, um den Nutzen von Optimierungsansätzen zu quantifizieren
+		\item Selbstadaptive Systeme und Optimierungsansätze, die unabhängig von der Domäne sind
 	\end{itemize}
 \end{frame}
 
@@ -246,7 +254,7 @@
 \printbibliography
 \end{frame}
 
-\section{Farben}
+%% \section{Farben}
 %% ----------------------------------------
 %% | Test-Folie mit definierten Farben |
 %% ----------------------------------------
