@@ -1,64 +1,80 @@
 \section{Classifying Existing Optimization Approaches}
 \label{ch:Existing}
 
-% TODO:
-% - compare approaches
-% - one more approach
-% \paragraph*{Literature for this section:} \begin{itemize}
-%     \item "A multi-agent systems approach to autonomic computing" \cite{MultiAgentSystem}
-%     \item "Using a multi-agent system and artificial intelligence for monitoring and improving the cloud performance and security" \cite{ImprovingCloudPerformanceAndSecurity}
-% \end{itemize}
+This chapter will classify and compare existing \acrshort{oa} for \acrshort{sas} using the proposed classification.
+The comparison can be found in Table \ref{table:ClassifyingExisting}.
 
-\subparagraph*{FUSION}
-by Elkhodary et al, 2010 \cite*{FUSION}  uses a learning and an adaptation cycle.
-The adaptation cycle corresponds to the Self-Adaptive part of the system
-and does not directly affect the learning cycle.
-The learning cycle is the \acrlong{oa} used by FUSION,
-it changes the behavior of the adaptation cycle.
-Both of these cycles continuously run in parallel to each other.
-\begin{itemize}[nosep]
-    \item Location: FUSION optimizes the Adaptation Control.
-    \item Time: FUSION uses both the design and run time to perform optimizations.
-    The design time is used to generate an initial model for the learning cycle.
-    During the run time the learning cycle monitors adaptations
-    and updates the Knowledge Base to improve future adaptations.
-    \item Technique: FUSION updates the rules used by the \acrshort{sas} and the shared knowledge base.
-    \item Purpose: FUSION aims to decrease the difference between the expected and actual outcome of adaptation rules.
-    \item Approach: FUSION acts as an external actor.
-    \item Reflective Adaptation Control: FUSION applies optimizations by updating models and modifying rules.
-\end{itemize}
+\noindent Most of the following existing \acrshort{oa} were found through a literature study conducted by Saputri and Lee \cite*{ApplicationOfMachineLearning}.
+The goal of the literature study was to give an overview over the application of machine learning in \acrshort{sas}.
+Because of this it is important to acknowledge that they all use some form of machine learning or similar technique to perform their optimizations.
+Generally most currently existing use machine learning which is why the conclusions drawn from this comparison should not be influenced by the fact
+that they all use machine learning to perform optimizations.
 
-\subparagraph*{Learning Revised Models for Planning in Adaptive Systems}
-by Sykes et al., 2013 \cite*{LearningRevisedModels} uses
-"a non-monotonic
-probabilistic rule learning technique, NoMPRoL, that finds
-hypotheses consisting of new rules specifying the probability
-of an action achieving its specified outcome under particular
-conditions" (Sykes et al., 2013 \cite*{LearningRevisedModels})
-\begin{itemize}[nosep]
-    \item Location: The optimizations focus on the Adaptation Control.
-    \item Time: The run time is used to perform optimizations.
-    \item Technique: This approach optimizes the adaptation rules and domain models.
-    \item Purpose: The optimizations aim to generate new and better adaptation rules and domain models.
-    \item Approach: The optimizations are performed by an internal component that sits between the domain model
-    and the \acrshort{sas}.
-    \item Reflective Adaptation Control: This approach generates new adaptation rules.
-\end{itemize}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+        \hline
+        \textbf{Reference} & \textbf{Location} & \textbf{Purpose} & \textbf{Time} & \textbf{Technique} & \textbf{Approach} & \textbf{\acrshort{rac}} \\
+        \hline
+        \hline
+        \cite*{FUSION} & A & R & D, R & R, K & E - C & M, R \\
+        \hline
+        \cite*{LearningRevisedModels} & A & R, M & R & R, K & I - C & R \\
+        \hline
+        \cite*{FIoT} & L & R & R & L, A, R & E - D & R \\
+        \hline
+        \cite*{ML1} & T & K, U & R & K & I - D & M, U \\
+        \hline
+        \cite*{ML2} & A, L & U & R & A, L & E - D & U \\
+        \hline
+        \cite*{ML7} & A & K, U & R & R, K & I - C & M, R, U \\
+        \hline
+        \cite*{ML8} & A, L & K, R & R, O & R, K & E - C & M, R \\
+        \hline
+        \cite*{ML11} & A & K, G & D & K & E - C & M, G \\
+        \hline
+        \cite*{ML12} & A & U & R & R & E - C & R, U \\
+        \hline
+        \cite*{ML14} & A & U & R & R & I - C & R, U \\
+        \hline
+    \end{tabular}
+    \caption{
+        \textbf{Location}: \textbf{A} = Adaptation Control, \textbf{L} = Level, \textbf{T} = Technique \\
+        \textbf{Purpose}: \textbf{K} = Update Knowledge, \textbf{R} = Apply Rules / Policies, \\
+            \indent\textbf{G} = Goal Satisfaction, \textbf{U} = Utility max-/minimization \\
+        \textbf{Time}: \textbf{D} = Design time, \textbf{R} = Run time / Online phase, \textbf{O} = Offline phase \\
+        \textbf{Technique}: \textbf{R} = Rules / Policies, \textbf{K} = Knowledge, \\
+            \indent\textbf{A} = Adaptation Technique, \textbf{L} = Level \\
+        \textbf{Approach}: \textbf{I} = Internal actor, \textbf{E} = External actor, \\
+            \indent\textbf{C} = Centralized, \textbf{D} = Decentralized, \textbf{H} = Hybrid \\
+        \textbf{\acrshort{rac}}: \textbf{M} = Update Models, \textbf{R} = Modify Rules / Policies, \\
+            \indent\textbf{G} = Satisfy Goals, \textbf{U} = Max-/Minimize Utilities
+    }
+    \label{table:ClassifyingExisting}
+\end{table}
 
-\subparagraph*{FIoT}
-by Moraes do Nascimento and Pereira, 2016 \cite*{FIoT} is a framework for using agent-based systems
-to construct self-organizing systems for the Internet of Things (IoT).
-For this they use three different types of agents: God, Observer and Adaptive agents.
-The God agents are responsible for establishing connections to IoT devices.
-The adaptive agent represent the \acrlong{sas}.
-The observer agents observe the adaptations that are made by the adaptive agents
-and change their behavior.
-\begin{itemize}[nosep]
-    \item Location: FIoT optimizes three different levels: The physical, communication and application layer.
-    \item Time: FIoT performs its optimizations during the run time of the system.
-    \item Technique: FIoT changes the Level, Adaptation Technique and Rules / Policies of a \acrshort{sas}.
-    \item Purpose: Generate self-organizing behavior in a \acrshort{sas}.
-    \item Approach: FIoT uses a decentralized agent-based approach.
-    \item Reflective Adaptation Control: The observer agents change the behavior of the adaptive agents.
-    This is equivalent to modifying rules or policies.
-\end{itemize}
+\noindent The first conclusion that can be drawn from this comparison of \acrshort{oa} is that most approaches
+only use the run time of the system.
+This is interesting because most of these approaches use machine learning to perform optimizations as mentioned previously.
+Most machine learning algorithms require trainings time before working effectively.
+The consequence of directly using an untrained system is that the system will behave in an unexpected or undesired manner in the beginning.
+This is especially true for approaches that actively explore the problem space to find optimal solutions like Q-learning \cite*{QLearning}.
+
+\noindent However there is a tradeoff that these \acrshort{oa} have to deal with.
+On one hand the system will behave in an unexpected or undesired manner,
+on the other hand there is no need for simulating the system to train the \acrshort{oa}.
+Simulating the system for training purposes can be difficult as it also requires the simulation of the systems environment.
+If the developers of a \acrshort{sas} could predict the environment perfectly,
+they would not need an \acrshort{oa} because they could just define adaptation rules and policies that are suited to all ways in which the environment may develop.
+This means that training the \acrshort{oa} before the systems runtime can decrease the time that it takes until the system behaves in an expected manner,
+but it also can not guarantee that the system will be perfectly trained.
+
+\noindent The second conclusion that can be drawn is that most \acrshort{oa} only search for problems in the Adaptation Control.
+But the \textit{Location} dimension offers other possibilities as well.
+In addition to the Adaptation Control, the Level or the Technique may require optimizations.
+
+\noindent The third conclusion that can be drawn is that only a few \acrshort{oa} use decentralized approaches.
+Using a \acrshort{oa} with a decentralized approach can have the advantage that
+each area can be optimized specifically.
+As Nascimento and Lucena showed, decentralized approaches can also be used to create self-organizing systems \cite*{FIoT}.
+But it also has the disadvantage of increasing the complexity of the \acrshort{oa}.

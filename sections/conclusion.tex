@@ -8,31 +8,83 @@
 % - Needs to be applied to more existing approaches
 % - Are there any areas lacking research?
 
-This paper proposed a classification for \acrlong{oa}[es] for \acrlong{sas}[s].
-The classification was derived from the same principles as the taxonomy for \acrlong{sas}[s]
-by Krupitzer et al., 2015 \cite*{SurveyOnEngineeringApproaches}.
-The main principles that were used to derive the classification are:
-\begin{itemize}[nosep]
-    \item The 5W+1H questions by Salehie and Tahvildari, 2009 \cite*{LandscapeAndResearchChallenges}.
-    \item The MAPE-K feedback loop which was created by Kephart and Chess, 2003 \cite*{VisionOfAutonomicComputing}.
-\end{itemize}
+% Hier sollte kurz die eigene Arbeit zusammengefasst werden (Ansatz, verwendete Methoden sowie Art der Evaluation und Ergebnisse). 
+% In diesem Fall ist es 
+% (i) die Entwicklung eines Ansatzes zur Klassifikation von OA für SAS nach 6 Dimensionen. 
+% (ii) exemplarische classification von 3 OA Arbeiten mithilfe des entwickelten Klassifikationsansatzes;
 
-To classify \acrshort{oa} the proposed classification provides six dimensions:
-Location, Time, Purpose, Approach, Technique and Reflective Adaptation Control.
-These are shown in Figure \ref{fig:Proposal}.
+% Formal sollten_
+% - keine Referenzen auf Arbeiten darin genannt werden (falls notwendig, gehöret dass normalerweise in den Abschnitt 'Related work' oder 'Introduction)
+% - keine Aufzählung enthalten sein
 
-\noindent The Location dimension asks on which level optimizations in a \acrlong{sas} might be necessary.
-Time distinguishes between \acrshort{oa} that are performed during the design time of the system,
-during the run time or online phase of the system or approaches that optimize systems during their offline phase.
-The dimension of Purpose provides a reason for Optimizations to be performed.
-Approach determines who is responsible for optimizations
-and Technique states which parts of a \acrshort{sas} can be optimized.
-Lastly, the Reflective Adaptation Control classifies how optimizations are performed.
+% TODO: Themeneinordnung
 
-\noindent After proposing a classification, it was exemplarily applied to three existing \acrshort{oa}.
-This is a part where further research is required. 
-The classification has to be applied to further existing approaches to verify its validity and completeness.
+While there are different approaches to classify and reason about \acrshort{sas}, three of which were highlighted by this paper,
+there is no classification for \acrshort{oa} for \acrshort{sas}.
+Because of this it is hard to compare different \acrshort{oa} and identify areas which require further research.
+To solve this problem this paper focused on proposing a classification for \acrshort{oa} for \acrshort{sas}.
 
-\noindent By applying the classification to more approaches, 
-one could also gain a structured overview over existing approaches.
-This can be used to identify approaches that have not been explored yet.
+\noindent To accomplish this, chapter \ref{ch:Foundations} started by explaining how \acrshort{sas} work with two short examples
+and also showed some of their limitations.
+This was followed by chapter \ref{ch:SASClassification} which explored three different approaches
+for classifying and reasoning about \acrshort{sas}.
+Chapter \ref{ch:Proposal} then derived and proposed a classification for \acrshort{oa} based on the principles shown in the previous chapter.
+Lastly, chapter \ref{ch:Existing} compared a selection of existing \acrshort{oa} by using the proposed classification.
+The comparison was then used to draw some initial conclusions about \acrshort{oa}.
+
+\noindent The first conclusion was that most \acrshort{oa} only use the systems runtime to perform optimizations.
+This has the advantage of not needing to simulate the system and its environment which can be complex.
+But because most \acrshort{oa} use machine learning for their optimizations,
+this can lead to unexpected or unwanted behavior at the beginning of the systems runtime.
+This disadvantage is especially present in \acrshort{oa} that use machine learning approaches
+like Q-learning which actively explores the problem space to find optimal solutions.
+
+\noindent The second conclusion was that only a few \acrshort{oa} search for problems which require optimization in areas of a \acrshort{sas}
+besides the Adaptation Control. The other two areas that can be optimized: the Level and the Technique still require
+research into how effective their optimization can be.
+
+\noindent The last conclusion was that most \acrshort{oa} use centralized approaches for performing optimizations.
+Because of this the usage of decentralized approaches still requires further research.
+
+\noindent Even though the proposed classification helps with comparing the existing \acrshort{oa},
+it does not help with comparing their performance.
+This is a problem not only for \acrshort{oa} but for \acrshort{sas} as well.
+There is currently no scientific way of comparing the performance of \acrshort{sas}.
+Because of this the effect of \acrshort{oa} on \acrshort{sas} can also not be quantified.
+
+\noindent Another problem that \acrshort{sas} and their \acrshort{oa} have is that
+most of them are highly domain specific and only try to solve a single domain problem.
+This means that domain independent \acrshort{sas} and \acrshort{oa} for them still require research.
+
+
+
+
+% FIXME: remove old after refactor
+% This paper proposed a classification for \acrlong{oa}[es] for \acrlong{sas}[s].
+% The classification was derived from the same principles as the taxonomy for \acrlong{sas}[s]
+% by Krupitzer et al., 2015 \cite*{SurveyOnEngineeringApproaches}.
+% The main principles that were used to derive the classification are:
+% \begin{itemize}[nosep]
+%     \item The 5W+1H questions by Salehie and Tahvildari, 2009 \cite*{LandscapeAndResearchChallenges}.
+%     \item The MAPE-K feedback loop which was created by Kephart and Chess, 2003 \cite*{VisionOfAutonomicComputing}.
+% \end{itemize}
+
+% To classify \acrshort{oa} the proposed classification provides six dimensions:
+% Location, Time, Purpose, Approach, Technique and Reflective Adaptation Control.
+
+
+% \noindent The Location dimension asks on which level optimizations in a \acrlong{sas} might be necessary.
+% Time distinguishes between \acrshort{oa} that are performed during the design time of the system,
+% during the run time or online phase of the system or approaches that optimize systems during their offline phase.
+% The dimension of Purpose provides a reason for Optimizations to be performed.
+% Approach determines who is responsible for optimizations
+% and Technique states which parts of a \acrshort{sas} can be optimized.
+% Lastly, the Reflective Adaptation Control classifies how optimizations are performed.
+
+% \noindent After proposing a classification, it was exemplarily applied to three existing \acrshort{oa}.
+% This is a part where further research is required. 
+% The classification has to be applied to further existing approaches to verify its validity and completeness.
+
+% \noindent By applying the classification to more approaches, 
+% one could also gain a structured overview over existing approaches.
+% This can be used to identify approaches that have not been explored yet.

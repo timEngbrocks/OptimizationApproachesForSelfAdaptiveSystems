@@ -1,0 +1,97 @@
+\section{Foundations}
+\label{ch:Foundations}
+
+\noindent In essence \acrshort{sas} are systems which change themselves and therefore their own behavior
+according to predefined rules and policies when they detect that predefined conditions are met or states have been reached.
+
+%% TODO: Foundations
+\noindent To better understand \acrshort{sas}, let us take a look at two examples.
+
+\subparagraph*{Example 1}
+Imagine you are managing an online store.
+Your store offers multiple services.
+Customers can browse your selection and buy your products.
+In addition to that customers can select products for which they want to receive a notification when they drop to a certain price.
+Business customers have the option of receiving their bill via Email.
+Lastly you manage your own advertisements.
+
+\noindent Based on these services there are some system parameters that you can control.
+You can change which products and advertisements are served to a customer.
+Based on how customers set price alerts you can change the price of a product to potentially increase sales.
+Lastly you can change how often your system sends Emails to decrease the load of your Email server.
+
+\noindent While you could perform all these tasks on your own, it would be more efficient to automate them.
+For this purpose you choose to implement a \acrshort{sas}.
+This \acrshort{sas} automatically adapts the price of products based on sales performance metrics that you define.
+It also chooses which products and advertisements to serve to a customer based on their purchase history
+and marketing policies that you create.
+Additionally the \acrshort{sas} controls the frequency of sending Emails by monitoring the load of the Email server
+and a goal that you selected.
+
+\noindent In summary, this \acrshort{sas} monitors itself and its environment
+and then adapts itself according to rules and policies that you defined.
+
+\subparagraph*{Example 2}
+Imagine you are developing the software for a robot.
+The robot should be able to navigate through partially known terrain,
+collect data based on some metrics and be able to update its software when a new version is released.
+
+\noindent To navigate through terrain that is only partially known, the robot has to be able to adapt
+its movement to an environment which it has not experienced before. 
+To collect data based on some performance metrics, the robot needs to change its method
+of data collection when the selected metrics change.
+Lastly, to update its software autonomously, the robots needs to be able
+to modify its software and reconfigure itself.
+
+\noindent All these tasks can be implemented as a \acrshort{sas}.
+Firstly, the robot might use a system that selects
+which strategy should be used for navigation based on images of its environment.
+You could then define a set of different strategies for the robot's navigation.
+For example, one strategy for steep terrain and one for terrain with an even ground.
+
+\noindent For the data collection you could define different policies
+that decide which data the robot should collect if it detects that a metric has reached a threshold.
+An example could be that if the robot is certain that it detected a human with its camera,
+that it should not store images of that person to avoid privacy conflicts.
+
+\noindent The self-updating behavior only requires the monitoring of one environment attribute:
+If a new version of the robot's software has been released.
+When this is the case, you define a policy that the robot should stop moving, download the new software
+and adapt itself.
+
+\noindent These two examples illustrate how different systems can use self-adaptiveness.
+In most cases it is enough to define simple rules and policies that should be executed
+when some condition is met.
+
+% \noindent To better understand \acrshort{sas}, let us take a look at a commonly used example.
+% Imaging you are the system administrator of a large scale online store.
+% This store has four parameters: site traffic, number of purchases, number of active server instances and the number of served advertisements.
+% During your day to day operations you encounter a common type of task:
+% Update some system parameter X based on some metric Y.
+% To make your job easier, you decide to use a \acrshort{sas} for these tasks
+% and come up with the following generalized adaptation rule:
+% If metric Y crosses threshold Z, update the system parameter X.
+
+% \noindent In this case the usage of a \acrshort{sas} would be beneficial because it could easily
+% automate a general set of tasks.
+% A human operator might have been able to perform these tasks on his own,
+% if the number of system parameters was sufficiently small.
+% But the \acrshort{sas} is better at handling large numbers of system parameters.
+
+% \noindent As explained in the previous chapter,
+% the performance of a \acrshort{sas} degrades over time
+% as the expected results of adaptation diverge from the actual adaptation results
+% because of unforeseen changes in the environment.
+
+% \noindent This can be illustrated by the previous example.
+% Imagine that the \acrshort{sas} has been in operation for some and you collected data on the systems performance.
+% You notice that the \acrshort{sas} changes some system parameters too aggressively,
+% because it performs an adaptation as soon as a metrics threshold has been violated.
+% As a human operator you would have waited some time to see how the metric develops before performing an adaptation
+% which would result in a smoother operation.
+% The \acrshort{sas} can not handle this type of uncertainty and only reacted to the current state of its environment.
+
+
+
+% \noindent The previous example could benefit from such optimizations by dynamically updating adaptation rules
+% to better reflect the systems changing environment.
