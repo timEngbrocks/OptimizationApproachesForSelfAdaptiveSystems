@@ -62,36 +62,3 @@ and adapt itself.
 \noindent These two examples illustrate how different systems can use self-adaptiveness.
 In most cases it is enough to define simple rules and policies that should be executed
 when some condition is met.
-
-% \noindent To better understand \acrshort{sas}, let us take a look at a commonly used example.
-% Imaging you are the system administrator of a large scale online store.
-% This store has four parameters: site traffic, number of purchases, number of active server instances and the number of served advertisements.
-% During your day to day operations you encounter a common type of task:
-% Update some system parameter X based on some metric Y.
-% To make your job easier, you decide to use a \acrshort{sas} for these tasks
-% and come up with the following generalized adaptation rule:
-% If metric Y crosses threshold Z, update the system parameter X.
-
-% \noindent In this case the usage of a \acrshort{sas} would be beneficial because it could easily
-% automate a general set of tasks.
-% A human operator might have been able to perform these tasks on his own,
-% if the number of system parameters was sufficiently small.
-% But the \acrshort{sas} is better at handling large numbers of system parameters.
-
-% \noindent As explained in the previous chapter,
-% the performance of a \acrshort{sas} degrades over time
-% as the expected results of adaptation diverge from the actual adaptation results
-% because of unforeseen changes in the environment.
-
-% \noindent This can be illustrated by the previous example.
-% Imagine that the \acrshort{sas} has been in operation for some and you collected data on the systems performance.
-% You notice that the \acrshort{sas} changes some system parameters too aggressively,
-% because it performs an adaptation as soon as a metrics threshold has been violated.
-% As a human operator you would have waited some time to see how the metric develops before performing an adaptation
-% which would result in a smoother operation.
-% The \acrshort{sas} can not handle this type of uncertainty and only reacted to the current state of its environment.
-
-
-
-% \noindent The previous example could benefit from such optimizations by dynamically updating adaptation rules
-% to better reflect the systems changing environment.

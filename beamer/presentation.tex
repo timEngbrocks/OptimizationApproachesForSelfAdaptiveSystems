@@ -13,14 +13,15 @@
 
 % Beginn der Präsentation
 
-\title[Optimierungsansätze für Adaptionsstrategien in SAS]{Optimierungsansätze für Adaptionsstrategien in SAS}
+\title[Proseminar: Optimierungsansätze für Adaptionsstrategien in SAS]{Proseminar: Optimierungsansätze für Adaptionsstrategien in SAS}
+\subtitle[Betreuerin: Dipl.-Inform. Martina Rapp]{Betreuerin: Dipl.-Inform. Martina Rapp}
 \author[Tim Engbrocks]{Tim Engbrocks}
 
-\date[21.\,07.\,2021]{21.\,07.\,2021}
+\date[22.\,07.\,2021]{22.\,07.\,2021}
 
 % Literatur 
  
-\usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
+\usepackage[citestyle=authoryear,bibstyle=numeric,hyperref,backend=biber,maxcitenames=2]{biblatex}
 \addbibresource{presentation.bib}
 \bibhang1em
 
@@ -45,27 +46,24 @@
 	\begin{itemize}
 		\item Moderne Sprachmodelle: 
 		\begin{itemize}
-			\item GPT-3 von OpenAI: 175 Milliarden Parameter \cite{GPT3}
-			\item Turing-NLG von Microsoft: 17 Milliarden Parameter \cite{TuringNLG}
+			\item GPT-3 von OpenAI: 175 Milliarden Parameter [\cite{GPT3}]
+			\item Turing-NLG von Microsoft: 17 Milliarden Parameter [\cite{TuringNLG}]
 		\end{itemize}
-		\item Teslas Autopilot AI sagt 10.000 Parameter vorraus \cite{TeslaAutopilot}
+		\item Teslas Autopilot AI sagt 10.000 Parameter vorraus [\cite{TeslaAutopilot}]
 	\end{itemize}
 \end{frame}
-\note{This is a test if notes are visible.}
 
 \begin{frame}{Netflix Microservice Architektur}
-	\begin{columns}
-		\column{.7\textwidth} \begin{center}
-			\includegraphics[width=0.9\textwidth]{sources/Mastering Chaos.pdf}
-		\end{center}
-		\column{.3\textwidth} Josh Evans, CTO @ Netflix, QCon 2016 \cite{JoshQCon}
-	\end{columns}
+	\begin{center}
+		\includegraphics[width=0.65\textwidth]{sources/Mastering Chaos.pdf}
+		[\cite{JoshQCon}]
+	\end{center}
 \end{frame}
 
 \begin{frame}{Die Lösung: Autonomes Management}
 	\begin{center}
 		\includegraphics[height=0.7\textheight]{sources/MAPEK.png}
-		\cite{VisionOfAutonomicComputing}
+		[\cite{VisionOfAutonomicComputing}]
 	\end{center}
 \end{frame}
 
@@ -100,7 +98,7 @@
 \begin{frame}{Selbstadaptive Systeme klassifizieren}
 	\begin{center}
 		\includegraphics[width=0.8\textwidth]{sources/KrupitzerTaxonomy.jpg}
-		\cite{SurveyOnEngineeringApproaches}
+		[\cite{SurveyOnEngineeringApproaches}]
 	\end{center}
 \end{frame}
 
@@ -136,12 +134,12 @@
 \begin{frame}{Eine Klassifizierung entwicklen}
 	Die Klassifizierung basiert auf drei Konzepten:
 	\begin{itemize}
-		\item Reflektive Systeme \cite{FORMS}
-		\item Die 6W Fragen \cite{LandscapeAndResearchChallenges}
+		\item Reflektive Systeme [\cite{FORMS}]
+		\item Die 6W Fragen [\cite{LandscapeAndResearchChallenges}]
 		\begin{itemize}
 			\item Wieso, Wo, Wann, Was, Wer und Wie
 		\end{itemize}
-		\item Die Klassifizierung von Selbstadaptiven Systemen \cite{SurveyOnEngineeringApproaches}
+		\item Die Klassifizierung von Selbstadaptiven Systemen [\cite{SurveyOnEngineeringApproaches}]
 	\end{itemize}
 \end{frame}
 
